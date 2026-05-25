@@ -1,5 +1,10 @@
 # Traffic Goat - First Outreach Scripts
 
+## First Sprint Focus
+- ICP: AI/SaaS founders and growth operators.
+- Offer: free Revenue Leak Audit.
+- Goal: start useful conversations, deliver 3-5 concrete observations, then offer a paid fix sprint or retainer.
+
 ## Short LinkedIn Message
 Hey [Name],
 
@@ -25,7 +30,7 @@ Open to a short conversation?
 ## Direct Audit Offer
 Hey [Name],
 
-I’m putting together a few Revenue Leak Audits for AI/SaaS/creator businesses this month.
+I’m putting together a few Revenue Leak Audits for AI/SaaS businesses this month.
 
 The audit looks at:
 - affiliate leaks
@@ -35,3 +40,19 @@ The audit looks at:
 - partner activation problems
 
 Want me to take a quick look at [Company]?
+
+## Specific Leak Follow-Up
+Hey [Name],
+
+One thing I noticed on [Company] is [specific observation].
+
+That may be leaking revenue because [short reason].
+
+Worth a quick teardown?
+
+## Close-The-Loop Follow-Up
+Hey [Name],
+
+Closing the loop here.
+
+If improving revenue efficiency across funnels, partners, or AI workflows becomes a priority, happy to send over a quick Revenue Leak Audit.
