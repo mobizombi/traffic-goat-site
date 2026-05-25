@@ -1,0 +1,11 @@
+{
+  "name": "traffic-goat-site",
+  "version": "1.0.0",
+  "description": "Traffic Goat static website",
+  "scripts": {
+    "start": "python3 -m http.server 8080"
+  },
+  "keywords": ["traffic-goat", "revenue", "affiliate", "ai-growth", "monetization"],
+  "author": "Traffic Goat",
+  "license": "UNLICENSED"
+}
