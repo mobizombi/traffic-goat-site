@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Traffic Goat static website",
   "scripts": {
-    "start": "python3 -m http.server 8080"
+    "start": "python3 -m http.server 8080",
+    "ops:today": "node scripts/traffic-goat-ops.js today",
+    "ops:preview": "node scripts/traffic-goat-ops.js preview"
   },
   "keywords": ["traffic-goat", "revenue", "affiliate", "ai-growth", "monetization"],
   "author": "Traffic Goat",
