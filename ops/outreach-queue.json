@@ -1,0 +1,41 @@
+[
+  {
+    "id": "ai-saas-founder",
+    "segment": "AI/SaaS founder",
+    "target_count": 20,
+    "source_queries": [
+      "LinkedIn AI SaaS founder launched",
+      "Product Hunt AI SaaS launch founder",
+      "AI workflow SaaS founder LinkedIn"
+    ],
+    "first_message": "Hey [Name], I looked at [Company] and noticed a possible revenue leak around [specific area]. I run Traffic Goat, where I help online businesses find and fix leaks between traffic, funnels, affiliates, AI workflows, and monetization. Want me to send over 2-3 quick observations?",
+    "follow_up_day_3": "Hey [Name], one specific thing I would check at [Company]: [specific observation]. That can leak revenue because [short reason]. Worth a quick teardown?",
+    "follow_up_day_7": "Closing the loop here. If improving revenue efficiency across traffic, follow-up, partners, or monetization becomes a priority, I can send a quick Revenue Leak Audit."
+  },
+  {
+    "id": "affiliate-program",
+    "segment": "Company with affiliate or partner program",
+    "target_count": 20,
+    "source_queries": [
+      "SaaS affiliate program founder LinkedIn",
+      "AI affiliate program partners",
+      "creator platform affiliate program"
+    ],
+    "first_message": "Hey [Name], I noticed [Company] has a partner/affiliate angle. One common leak I see: programs recruit partners, but the activation path after signup is too weak. Partners join, then do not know the first campaign, first audience, or first asset to use. Want me to take a quick look and send 2-3 activation fixes?",
+    "follow_up_day_3": "Quick thought on [Company]: if partners are not activating, the issue is usually not motivation. It is missing momentum. I would check onboarding, asset clarity, first-win path, and follow-up timing. Want me to map that out?",
+    "follow_up_day_7": "Closing the loop. If partner activation becomes a priority, I can send a Revenue Leak Audit focused on the affiliate path."
+  },
+  {
+    "id": "ai-workflow-drag",
+    "segment": "Lean team with manual growth ops",
+    "target_count": 20,
+    "source_queries": [
+      "founder lean growth team AI SaaS",
+      "SaaS founder manual sales follow-up",
+      "AI startup growth ops founder"
+    ],
+    "first_message": "Hey [Name], I liked what you are building with [Company]. One thing I would look for is manual revenue drag: lead review, follow-up, reporting, partner tracking, and content repurposing still happening by hand. That is usually where AI workflows create practical leverage. Want me to send a quick audit angle?",
+    "follow_up_day_3": "The highest-value AI workflow is usually not content generation. It is the repetitive operational work that delays revenue conversations. For [Company], I would first check [specific workflow]. Worth a quick teardown?",
+    "follow_up_day_7": "Closing the loop. If workflow drag is slowing growth, I can send a short Revenue Leak Audit with the first system I would automate."
+  }
+]
