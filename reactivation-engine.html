@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dormant Affiliate Reactivation Engine — Traffic Goat</title>
+  <meta name="description" content="Upload your affiliate list, flag dormant partners by inactivity tier, and generate personalized reactivation emails instantly. Free tool." />
+  <meta property="og:title" content="Dormant Affiliate Reactivation Engine" />
+  <meta property="og:description" content="Find your dormant affiliates and generate reactivation emails in under a minute." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://traffic-goat.com/reactivation-engine.html" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .tool-box{background:var(--card2);border:1px solid var(--line);border-radius:28px;padding:36px;box-shadow:var(--shadow)}
+    .tool-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:24px}
+    .drop-zone{border:2px dashed var(--line);border-radius:18px;padding:36px;text-align:center;cursor:pointer;transition:.2s ease}
+    .drop-zone:hover,.drop-zone.drag{border-color:var(--green);background:rgba(74,222,128,.05)}
+    .drop-zone p{margin:0;color:var(--muted)}
+    .drop-zone input{display:none}
+    .csv-hint{margin-top:14px;font-size:13px;color:var(--muted)}
+    .csv-hint code{background:rgba(255,255,255,.06);padding:2px 6px;border-radius:6px;color:var(--gold)}
+    table.results{width:100%;border-collapse:collapse;margin-top:24px;font-size:14px}
+    table.results th{text-align:left;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.08em;padding:10px;border-bottom:1px solid var(--line)}
+    table.results td{padding:10px;border-bottom:1px solid var(--line);color:#c2ccd8}
+    .tier-pill{padding:4px 10px;border-radius:999px;font-size:11px;font-weight:800;text-transform:uppercase}
+    .tier-14{background:rgba(214,184,106,.15);color:var(--gold)}
+    .tier-30{background:rgba(255,153,102,.15);color:#ff9966}
+    .tier-60{background:rgba(255,99,99,.15);color:#ff6363}
+    .email-preview{background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:14px;padding:16px;margin-top:8px;font-size:13px;color:#c2ccd8;white-space:pre-wrap;display:none}
+    .view-email{color:var(--green);cursor:pointer;font-size:13px;font-weight:700}
+    .summary-row{display:flex;gap:16px;margin-top:24px;flex-wrap:wrap}
+    .summary-card{background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:16px;padding:16px 20px;flex:1;min-width:140px}
+    .summary-card span{display:block;color:var(--muted);font-size:12px}
+    .summary-card strong{display:block;margin-top:6px;font-size:24px;color:var(--green)}
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <a class="logo" href="index.html#top"><span class="logo-mark">TG</span><span>Traffic Goat</span></a>
+    <nav>
+      <a href="index.html#systems">Systems</a>
+      <a href="index.html#fit">Who It's For</a>
+      <a href="index.html#proof">Proof</a>
+      <a href="index.html#insights">Insights</a>
+    </nav>
+    <a class="nav-cta" href="index.html#contact">Book Strategy Call</a>
+  </div>
+</header>
+
+<main>
+<section class="hero" style="padding-bottom:40px">
+  <div class="container">
+    <div class="eyebrow">Free Tool</div>
+    <h1 style="font-size:clamp(34px,5vw,58px)">Find Your Dormant Affiliates. Generate Their Reactivation Emails. Now.</h1>
+    <p class="hero-sub">Upload a CSV of your affiliate list, and this flags everyone who's gone quiet — sorted by how long they've been dark — with a ready-to-send reactivation email for each tier. No signup required.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="tool-box">
+      <div class="drop-zone" id="dropZone">
+        <p><strong>Click to upload</strong> or drag your CSV here</p>
+        <input type="file" id="fileInput" accept=".csv" />
+      </div>
+      <div class="csv-hint">
+        CSV needs 2 columns: <code>name</code> and <code>last_active_date</code> (format YYYY-MM-DD). Example: <code>Jane Smith,2026-04-02</code>
+      </div>
+
+      <div id="resultsArea" style="display:none">
+        <div class="summary-row" id="summaryRow"></div>
+        <table class="results" id="resultsTable">
+          <thead><tr><th>Name</th><th>Last Active</th><th>Days Dark</th><th>Tier</th><th>Email</th></tr></thead>
+          <tbody id="resultsBody"></tbody>
+        </table>
+        <div style="margin-top:24px">
+          <button class="btn btn-primary" onclick="downloadAll()">Download All Emails (.txt)</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section audit">
+  <div class="container audit-box">
+    <div><span class="eyebrow">Want It Done For You</span><h2>Send me your real list for a deeper pass.</h2><p>This free tool uses fixed templates. For custom-written emails tailored to your actual program, payout structure, and tone — I'll run it manually for $47–$97 depending on list size.</p></div>
+    <a class="btn btn-primary" href="mailto:adam@traffic-goat.com?subject=Reactivation%20Engine%20-%20Custom%20Run%20Request">Request Custom Run</a>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div><a class="logo" href="index.html#top"><span class="logo-mark">TG</span><span>Traffic Goat</span></a><p>AI Revenue Systems | Affiliate Growth | Monetization Infrastructure</p></div>
+    <div><a href="index.html#systems">Systems</a><a href="index.html#proof">Proof</a><a href="index.html#contact">Contact</a></div>
+  </div>
+</footer>
+
+<script>
+const dropZone = document.getElementById('dropZone');
+const fileInput = document.getElementById('fileInput');
+let lastResults = [];
+
+dropZone.addEventListener('click', () => fileInput.click());
+dropZone.addEventListener('dragover', (e) => { e.preventDefault(); dropZone.classList.add('drag'); });
+dropZone.addEventListener('dragleave', () => dropZone.classList.remove('drag'));
+dropZone.addEventListener('drop', (e) => {
+  e.preventDefault();
+  dropZone.classList.remove('drag');
+  if (e.dataTransfer.files.length) handleFile(e.dataTransfer.files[0]);
+});
+fileInput.addEventListener('change', (e) => {
+  if (e.target.files.length) handleFile(e.target.files[0]);
+});
+
+function handleFile(file) {
+  const reader = new FileReader();
+  reader.onload = (e) => parseCSV(e.target.result);
+  reader.readAsText(file);
+}
+
+function parseCSV(text) {
+  const lines = text.trim().split(/\r?\n/);
+  const header = lines[0].toLowerCase().split(',').map(h => h.trim());
+  const nameIdx = header.indexOf('name');
+  const dateIdx = header.indexOf('last_active_date');
+
+  if (nameIdx === -1 || dateIdx === -1) {
+    alert('CSV must have "name" and "last_active_date" columns.');
+    return;
+  }
+
+  const today = new Date();
+  const rows = [];
+
+  for (let i = 1; i < lines.length; i++) {
+    if (!lines[i].trim()) continue;
+    const cols = lines[i].split(',');
+    const name = cols[nameIdx] ? cols[nameIdx].trim() : 'Partner';
+    const dateStr = cols[dateIdx] ? cols[dateIdx].trim() : '';
+    const lastActive = new Date(dateStr);
+    if (isNaN(lastActive)) continue;
+
+    const daysDark = Math.floor((today - lastActive) / (1000 * 60 * 60 * 24));
+    let tier = null;
+    if (daysDark >= 60) tier = '60';
+    else if (daysDark >= 30) tier = '30';
+    else if (daysDark >= 14) tier = '14';
+
+    if (tier) {
+      rows.push({ name, dateStr, daysDark, tier, email: buildEmail(name, tier) });
+    }
+  }
+
+  lastResults = rows;
+  renderResults(rows);
+}
+
+function buildEmail(name, tier) {
+  const firstName = name.split(' ')[0];
+  if (tier === '14') {
+    return `Subject: Quick question about the program\n\nHey ${firstName},\n\nNoticed you joined the program but haven't had a chance to start promoting yet — totally normal, just want to make sure you have what you need.\n\nWhat would make it easier to get your first link live this week? Happy to send creative, talking points, or jump on a quick call if helpful.\n\n— [Your name]`;
+  }
+  if (tier === '30') {
+    return `Subject: A quick update + something that might help\n\nHey ${firstName},\n\nWanted to share a quick update on the program. Thought it might be useful if you're considering promoting again.\n\nIf now's not the right time, no worries at all — just let me know what would make this a better fit down the line.\n\n— [Your name]`;
+  }
+  return `Subject: Should I keep your spot open?\n\nHey ${firstName},\n\nHaven't seen any activity on your affiliate account in a while, so wanted to check in before assuming it's not a fit anymore.\n\nIf you're open to it, I'd love to send over a couple of quick wins other partners have used to get started. If it's just not the right time, that's completely fine too — just let me know either way.\n\n— [Your name]`;
+}
+
+function renderResults(rows) {
+  const resultsArea = document.getElementById('resultsArea');
+  const summaryRow = document.getElementById('summaryRow');
+  const tbody = document.getElementById('resultsBody');
+
+  const counts = { '14': 0, '30': 0, '60': 0 };
+  rows.forEach(r => counts[r.tier]++);
+
+  summaryRow.innerHTML = `
+    <div class="summary-card"><span>Total Dormant Found</span><strong>${rows.length}</strong></div>
+    <div class="summary-card"><span>14+ Days Dark</span><strong>${counts['14']}</strong></div>
+    <div class="summary-card"><span>30+ Days Dark</span><strong>${counts['30']}</strong></div>
+    <div class="summary-card"><span>60+ Days Dark</span><strong>${counts['60']}</strong></div>
+  `;
+
+  tbody.innerHTML = rows.map((r, i) => `
+    <tr>
+      <td>${r.name}</td>
+      <td>${r.dateStr}</td>
+      <td>${r.daysDark}</td>
+      <td><span class="tier-pill tier-${r.tier}">${r.tier}+ days</span></td>
+      <td><span class="view-email" onclick="toggleEmail(${i})">View / Copy</span><div class="email-preview" id="email-${i}">${r.email}</div></td>
+    </tr>
+  `).join('');
+
+  resultsArea.style.display = 'block';
+}
+
+function toggleEmail(i) {
+  const el = document.getElementById('email-' + i);
+  el.style.display = el.style.display === 'block' ? 'none' : 'block';
+}
+
+function downloadAll() {
+  if (!lastResults.length) return;
+  let content = 'DORMANT AFFILIATE REACTIVATION EMAILS\nGenerated by Traffic Goat Reactivation Engine\n\n';
+  lastResults.forEach(r => {
+    content += `===== ${r.name} (${r.daysDark} days dark) =====\n\n${r.email}\n\n\n`;
+  });
+  const blob = new Blob([content], { type: 'text/plain' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'reactivation-emails.txt';
+  a.click();
+  URL.revokeObjectURL(url);
+}
+</script>
+</body>
+</html>

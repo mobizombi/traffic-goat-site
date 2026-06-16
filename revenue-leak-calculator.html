@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Revenue Leak Calculator — Traffic Goat</title>
+  <meta name="description" content="Estimate how much revenue your affiliate program is leaving on the table due to dormant partners. Takes 60 seconds." />
+  <meta property="og:title" content="Revenue Leak Calculator" />
+  <meta property="og:description" content="Find out what dormant affiliates are actually costing you." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://traffic-goat.com/revenue-leak-calculator.html" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .calc-box{background:var(--card2);border:1px solid var(--line);border-radius:28px;padding:36px;box-shadow:var(--shadow);max-width:620px}
+    .calc-field{margin-bottom:22px}
+    .calc-field label{display:block;color:#c2ccd8;font-size:14px;margin-bottom:8px;font-weight:700}
+    .calc-field input{width:100%;padding:13px 16px;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.04);color:var(--text);font-size:16px}
+    .calc-field input:focus{outline:none;border-color:var(--green)}
+    .calc-result{margin-top:30px;padding:26px;border-radius:20px;background:rgba(74,222,128,.07);border:1px solid rgba(74,222,128,.22);display:none}
+    .calc-result.show{display:block}
+    .calc-result .big{font-size:42px;font-weight:900;color:var(--green);display:block;margin:8px 0}
+    .calc-result p{color:var(--muted);font-size:14px;margin:0}
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <a class="logo" href="index.html#top"><span class="logo-mark">TG</span><span>Traffic Goat</span></a>
+    <nav>
+      <a href="index.html#systems">Systems</a>
+      <a href="index.html#fit">Who It's For</a>
+      <a href="index.html#proof">Proof</a>
+      <a href="index.html#insights">Insights</a>
+    </nav>
+    <a class="nav-cta" href="index.html#contact">Book Strategy Call</a>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="container">
+    <div class="eyebrow">Free Tool</div>
+    <h1 style="font-size:clamp(36px,5.5vw,64px)">What Are Dormant Affiliates Actually Costing You?</h1>
+    <p class="hero-sub">Most programs have far more approved partners than active ones. This estimates the revenue sitting in the gap. Takes 60 seconds, no email required to see your number.</p>
+
+    <div class="calc-box">
+      <div class="calc-field">
+        <label for="approved">Total approved affiliates</label>
+        <input type="number" id="approved" placeholder="e.g. 150" min="0" />
+      </div>
+      <div class="calc-field">
+        <label for="active">Affiliates active in the last 30 days (sent at least 1 click)</label>
+        <input type="number" id="active" placeholder="e.g. 12" min="0" />
+      </div>
+      <div class="calc-field">
+        <label for="avgvalue">Average revenue per active affiliate, per month ($)</label>
+        <input type="number" id="avgvalue" placeholder="e.g. 400" min="0" />
+      </div>
+      <div class="calc-field">
+        <label for="reactivation">Realistic reactivation rate of dormant affiliates (%)</label>
+        <input type="number" id="reactivation" placeholder="e.g. 20" min="0" max="100" value="20" />
+      </div>
+      <button class="btn btn-primary" style="width:100%" onclick="calculateLeak()">Calculate My Leak</button>
+
+      <div class="calc-result" id="result">
+        <span>Estimated monthly revenue left on the table</span>
+        <span class="big" id="resultValue">$0</span>
+        <p id="resultDetail"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section audit">
+  <div class="container audit-box">
+    <div><span class="eyebrow">Next Step</span><h2>Want the actual fix, not just the number?</h2><p>The Revenue Leak Audit identifies exactly which dormant partners are worth reactivating and how — not just the size of the gap.</p></div>
+    <a class="btn btn-primary" href="index.html#contact">Request Audit</a>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div><a class="logo" href="index.html#top"><span class="logo-mark">TG</span><span>Traffic Goat</span></a><p>AI Revenue Systems | Affiliate Growth | Monetization Infrastructure</p></div>
+    <div><a href="index.html#systems">Systems</a><a href="index.html#proof">Proof</a><a href="index.html#contact">Contact</a></div>
+  </div>
+</footer>
+
+<script>
+function calculateLeak() {
+  const approved = parseFloat(document.getElementById('approved').value) || 0;
+  const active = parseFloat(document.getElementById('active').value) || 0;
+  const avgValue = parseFloat(document.getElementById('avgvalue').value) || 0;
+  const reactivationRate = (parseFloat(document.getElementById('reactivation').value) || 20) / 100;
+
+  const dormant = Math.max(approved - active, 0);
+  const recoverable = Math.round(dormant * reactivationRate);
+  const monthlyLeak = recoverable * avgValue;
+
+  const resultEl = document.getElementById('result');
+  const valueEl = document.getElementById('resultValue');
+  const detailEl = document.getElementById('resultDetail');
+
+  valueEl.textContent = '$' + monthlyLeak.toLocaleString();
+  detailEl.textContent = dormant + ' dormant affiliates, ' + Math.round(reactivationRate*100) + '% realistic reactivation = ' + recoverable + ' partners that could be sending traffic but aren\'t.';
+  resultEl.classList.add('show');
+}
+</script>
+</body>
+</html>
