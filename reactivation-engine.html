@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dormant Affiliate Reactivation Engine — Traffic Goat</title>
+  <title>Dormant Affiliate Reactivation Engine - Traffic Goat</title>
   <meta name="description" content="Upload your affiliate list, flag dormant partners by inactivity tier, and generate personalized reactivation emails instantly. Free tool." />
   <meta property="og:title" content="Dormant Affiliate Reactivation Engine" />
   <meta property="og:description" content="Find your dormant affiliates and generate reactivation emails in under a minute." />
@@ -53,7 +53,7 @@
   <div class="container">
     <div class="eyebrow">Free Tool</div>
     <h1 style="font-size:clamp(34px,5vw,58px)">Find Your Dormant Affiliates. Generate Their Reactivation Emails. Now.</h1>
-    <p class="hero-sub">Upload a CSV of your affiliate list, and this flags everyone who's gone quiet — sorted by how long they've been dark — with a ready-to-send reactivation email for each tier. No signup required.</p>
+    <p class="hero-sub">Upload a CSV of your affiliate list, and this flags everyone who's gone quiet - sorted by how long they've been dark - with a ready-to-send reactivation email for each tier. No signup required.</p>
   </div>
 </section>
 
@@ -84,7 +84,7 @@
 
 <section class="section audit">
   <div class="container audit-box">
-    <div><span class="eyebrow">Want It Done For You</span><h2>Send me your real list for a deeper pass.</h2><p>This free tool uses fixed templates. For custom-written emails tailored to your actual program, payout structure, and tone — I'll run it manually for $47–$97 depending on list size.</p></div>
+    <div><span class="eyebrow">Want It Done For You</span><h2>Send me your real list for a deeper pass.</h2><p>This free tool uses fixed templates. For custom-written emails tailored to your actual program, payout structure, and tone - I'll run it manually for $47–$97 depending on list size.</p></div>
     <a class="btn btn-primary" href="mailto:adam@traffic-goat.com?subject=Reactivation%20Engine%20-%20Custom%20Run%20Request">Request Custom Run</a>
   </div>
 </section>
@@ -160,12 +160,12 @@ function parseCSV(text) {
 function buildEmail(name, tier) {
   const firstName = name.split(' ')[0];
   if (tier === '14') {
-    return `Subject: Quick question about the program\n\nHey ${firstName},\n\nNoticed you joined the program but haven't had a chance to start promoting yet — totally normal, just want to make sure you have what you need.\n\nWhat would make it easier to get your first link live this week? Happy to send creative, talking points, or jump on a quick call if helpful.\n\n— [Your name]`;
+    return `Subject: Quick question about the program\n\nHey ${firstName},\n\nNoticed you joined the program but haven't had a chance to start promoting yet - totally normal, just want to make sure you have what you need.\n\nWhat would make it easier to get your first link live this week? Happy to send creative, talking points, or jump on a quick call if helpful.\n\n -  [Your name]`;
   }
   if (tier === '30') {
-    return `Subject: A quick update + something that might help\n\nHey ${firstName},\n\nWanted to share a quick update on the program. Thought it might be useful if you're considering promoting again.\n\nIf now's not the right time, no worries at all — just let me know what would make this a better fit down the line.\n\n— [Your name]`;
+    return `Subject: A quick update + something that might help\n\nHey ${firstName},\n\nWanted to share a quick update on the program. Thought it might be useful if you're considering promoting again.\n\nIf now's not the right time, no worries at all - just let me know what would make this a better fit down the line.\n\n -  [Your name]`;
   }
-  return `Subject: Should I keep your spot open?\n\nHey ${firstName},\n\nHaven't seen any activity on your affiliate account in a while, so wanted to check in before assuming it's not a fit anymore.\n\nIf you're open to it, I'd love to send over a couple of quick wins other partners have used to get started. If it's just not the right time, that's completely fine too — just let me know either way.\n\n— [Your name]`;
+  return `Subject: Should I keep your spot open?\n\nHey ${firstName},\n\nHaven't seen any activity on your affiliate account in a while, so wanted to check in before assuming it's not a fit anymore.\n\nIf you're open to it, I'd love to send over a couple of quick wins other partners have used to get started. If it's just not the right time, that's completely fine too - just let me know either way.\n\n -  [Your name]`;
 }
 
 function renderResults(rows) {
