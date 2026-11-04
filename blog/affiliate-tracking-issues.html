@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Affiliate Tracking Issues: Why Partner Sales Go Missing and How to Fix Them - Traffic Goat</title>
+  <meta name="description" content="Affiliate tracking issues cost you twice: partners lose trust when sales go missing, and you overpay when attribution rules are loose. How to find the leaks, test every path and fix attribution." />
+  <meta property="og:title" content="Affiliate Tracking Issues: Why Partner Sales Go Missing and How to Fix Them" />
+  <meta property="og:description" content="An operator-level guide to affiliate tracking and attribution problems: the common causes, a test protocol, monthly reconciliation and a written attribution policy." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://traffic-goat.com/blog/affiliate-tracking-issues.html" />
+  <meta property="og:image" content="https://traffic-goat.com/assets/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Affiliate Tracking Issues: Why Partner Sales Go Missing and How to Fix Them" />
+  <meta name="twitter:description" content="An operator-level guide to affiliate tracking and attribution problems: the common causes, a test protocol, monthly reconciliation and a written attribution policy." />
+  <meta name="twitter:image" content="https://traffic-goat.com/assets/og-image.png" />
+  <link rel="icon" href="../favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" href="../assets/favicon.png" />
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WJLZ3XMCFH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WJLZ3XMCFH');
+  </script>
+  <link rel="canonical" href="https://traffic-goat.com/blog/affiliate-tracking-issues.html" />
+  <link rel="stylesheet" href="../styles.css" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Affiliate Tracking Issues: Why Partner Sales Go Missing and How to Fix Them",
+      "description": "An operator-level guide to affiliate tracking and attribution problems: why partner sales go missing or get over-credited, how to test every conversion path, how to reconcile the platform against your orders, and how to write an attribution policy partners trust.",
+      "datePublished": "2026-11-04",
+      "dateModified": "2026-11-04",
+      "mainEntityOfPage": "https://traffic-goat.com/blog/affiliate-tracking-issues.html",
+      "image": "https://traffic-goat.com/assets/og-image.png",
+      "author": {"@type": "Person", "@id": "https://traffic-goat.com/#adam", "name": "Adam S."},
+      "publisher": {"@type": "Organization", "@id": "https://traffic-goat.com/#org", "name": "Traffic Goat", "logo": {"@type": "ImageObject", "url": "https://traffic-goat.com/assets/traffic-goat-logo.png"}}
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type":"Question","name":"Why are my affiliate sales not tracking?","acceptedAnswer":{"@type":"Answer","text":"Usually because the partner's click ID is lost somewhere between the click and the conversion event. Common causes are redirects that strip URL parameters, a checkout on a different domain, browser limits on cookies, conversion pixels that do not fire on every thank-you page or payment method, and sales that close outside the website, such as in-app upgrades or deals closed by a sales team. Test each conversion path with a real click and a real order to find which one breaks."}},
+        {"@type":"Question","name":"What is the difference between pixel tracking and server-side (postback) tracking?","acceptedAnswer":{"@type":"Answer","text":"Pixel tracking fires a script or image in the customer's browser on the confirmation page and relies on a cookie set at the click. Server-side or postback tracking stores the partner's click ID with the order on your side and sends the conversion to the affiliate platform from your server. Server-side tracking is less exposed to browser restrictions, ad blockers and missed thank-you pages, but it needs the click ID captured and stored correctly at the start of the session."}},
+        {"@type":"Question","name":"How do you check whether your affiliate platform is missing sales?","acceptedAnswer":{"@type":"Answer","text":"Reconcile it against your own order data every month. Take the orders in your backend that carry an affiliate click ID or partner coupon, compare them with the conversions the platform recorded for the same period, and break the gap down by payment method, device, product and partner. A small, stable gap is normal. A gap concentrated in one path points straight at the break."}},
+        {"@type":"Question","name":"Should affiliate programs use last-click or first-click attribution?","acceptedAnswer":{"@type":"Answer","text":"Most programs use last-click because it is simple and widely understood by partners. The choice matters less than writing it down and applying it consistently, including how coupons, your own paid ads and other partners are treated when they touch the same sale. If your program depends on content partners who introduce buyers early, consider rules that protect them, such as ignoring coupon-only touches or giving a share of credit to the first partner."}},
+        {"@type":"Question","name":"How should you handle affiliate missing-commission claims?","acceptedAnswer":{"@type":"Answer","text":"Have a written process: what a partner must send (order date, approximate value, the link used), how long you take to reply, and how you check the claim against your order data. Answer every claim, even when the answer is no, and log them. A cluster of claims from one partner type, device or payment method is often the first sign of a tracking break."}}
+      ]
+    }
+  </script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <a class="logo" href="../index.html#top"><img class="logo-mark" src="../assets/traffic-goat-logo.png" alt="" width="44" height="44" /><span>Traffic Goat</span></a>
+    <nav>
+      <a href="../index.html#findings">The findings</a>
+      <a href="../index.html#scope">Scope</a>
+      <a href="../index.html#surveyor">Surveyor</a>
+      <a href="../index.html#insights">Insights</a>
+    </nav>
+    <div class="nav-actions">
+      <div class="social-links social-links--nav" aria-label="Traffic Goat social profiles">
+        <a href="https://www.linkedin.com/company/trafficgoat" target="_blank" rel="noopener noreferrer" aria-label="Traffic Goat on LinkedIn">in</a>
+        <a href="https://www.facebook.com/profile.php?id=61590358515349" target="_blank" rel="noopener noreferrer" aria-label="Traffic Goat on Facebook">f</a>
+      </div>
+      <a class="nav-cta" href="../index.html#fees" data-track="nav-audit">Request Audit</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<article class="container article">
+  <a class="back-link" href="../index.html#insights">&larr; Back to Insights</a>
+  <span class="eyebrow">Affiliate Systems</span>
+  <h1>Affiliate Tracking Issues: Why Partner Sales Go Missing and How to Fix Them</h1>
+  <p class="article-meta">Traffic Goat Insights - By Adam S.</p>
+
+  <p>A partner emails to say they sent a customer who bought, and the sale never showed up in their dashboard. You check, and the platform has no record of it. You check your orders, and the customer is there. Somewhere between the click and the conversion, the link between the two was lost.</p>
+
+  <p>Affiliate tracking issues rarely announce themselves. There is no error message when a sale goes uncredited. Revenue simply looks a little lower, a few partners get a little quieter, and the program slowly earns a reputation for "not tracking well" in the circles where partners compare notes.</p>
+
+  <p>This post covers how affiliate tracking actually breaks, how to test for it, how to reconcile your platform against your own order data, and how to set attribution rules partners can trust. Tracking is one of the six elements in our <a href="affiliate-program-audit-checklist.html">affiliate program audit checklist</a>, and it is the one most teams assume is fine because nobody has complained loudly yet.</p>
+
+  <h2>Tracking fails in two directions</h2>
+  <p>Most people think of tracking problems as missing sales. That is half of it.</p>
+  <ul>
+    <li><strong>Under-attribution:</strong> a partner drove the sale and did not get credit. The partner earns less than they should, their earnings per click look worse than your competitors', and the best partners move their effort elsewhere. You keep the commission in the short term and lose the partner in the long term.</li>
+    <li><strong>Over-attribution:</strong> a partner gets credit for a sale they did not really drive. A coupon site catches a customer at checkout who was already buying, a partner bids on your brand name and takes the click from your own ad, or a stale cookie claims a sale the customer made weeks later through another route. You pay commission on revenue you would have had anyway.</li>
+  </ul>
+  <p>Both show up as numbers that look reasonable on a dashboard. A program can under-credit its content partners and over-credit its coupon partners at the same time, which is one of the quietest ways a program's economics drift. The payout side of that problem is covered in <a href="affiliate-commission-structure.html">affiliate commission structure: models, examples and how to choose</a>.</p>
+
+  <h2>Symptoms worth investigating</h2>
+  <p>None of these prove a tracking break on their own. Each is a reason to look.</p>
+  <ul>
+    <li>Missing-commission claims from partners, especially more than one from the same partner type.</li>
+    <li>A partner whose clicks hold steady while their conversions drop, with no change in what they publish.</li>
+    <li>Conversion rate on affiliate traffic that is much lower on one device, browser or country than the others.</li>
+    <li>Fewer affiliate conversions than orders that carry an affiliate coupon code.</li>
+    <li>A step change in affiliate conversions that lines up with a site release, a checkout change, a new payment method or a consent banner update.</li>
+    <li>Coupon and deal partners taking a growing share of commissions while content partners shrink.</li>
+  </ul>
+  <p>The second and fifth symptoms often point to the same story: tracking that worked for years, until someone changed the checkout and nobody told the partner team. Partners notice before you do, and many of them simply stop promoting rather than write in. That pattern is part of <a href="why-affiliates-stop-promoting.html">why affiliates stop promoting your program</a>.</p>
+
+  <h2>The common causes of affiliate tracking issues</h2>
+
+  <h3>1. The click ID gets lost on the way to checkout</h3>
+  <p>Almost every tracking setup depends on an identifier from the partner's click (a click ID, a partner ID, or a parameter in the URL) surviving until the conversion. It gets lost when:</p>
+  <ul>
+    <li>A redirect, a short link, a language or country redirect, or a "www" to non-"www" hop drops the URL parameters.</li>
+    <li>The landing page is on one domain and the checkout or sign-up is on another, such as a hosted checkout, an app subdomain or a separate store platform.</li>
+    <li>A single-page app changes the URL before the tracking script reads it.</li>
+    <li>A partner deep links to a page that does not load the tracking script at all.</li>
+  </ul>
+
+  <h3>2. Browser limits and consent shorten or block cookies</h3>
+  <p>Browsers increasingly restrict cookies, especially third-party cookies and cookies set by scripts, and ad blockers and privacy extensions block many tracking scripts outright. A consent banner that loads the affiliate script only after the visitor accepts can mean the click is never recorded for visitors who ignore the banner. If your setup relies only on a third-party cookie set at the click, assume some share of real conversions is not being recorded, and that the share differs by browser.</p>
+
+  <h3>3. The conversion event does not fire everywhere</h3>
+  <p>The tracking pixel or conversion call has to run for every way a customer can complete a purchase. It often misses:</p>
+  <ul>
+    <li>Payment methods that complete off-site and return to a different confirmation page, or do not return at all.</li>
+    <li>Free trials that convert to paid later, without the original partner being attached to the paid event.</li>
+    <li>Upgrades and purchases inside the product, rather than on the website.</li>
+    <li>Deals closed by a sales team, where the partner's referral lives in a CRM field that never reaches the affiliate platform.</li>
+    <li>New products, plans or landing pages added after tracking was first set up.</li>
+  </ul>
+
+  <h3>4. Recurring revenue is not tied to the original partner</h3>
+  <p>If you pay recurring commission, renewals and upgrades must be linked to the customer, not to a fresh click. Programs that track only the first payment and promise recurring commission end up paying it inconsistently, by hand, or not at all, and partners notice when monthly earnings do not match the customers they know they sent.</p>
+
+  <h3>5. Attribution rules conflict or are not written down</h3>
+  <p>When two partners, a coupon code and your own paid ads all touch the same sale, something decides who gets credit. Often that something is a default setting nobody chose. Common conflicts: a coupon code overrides the content partner who introduced the buyer, a partner's link and your own retargeting both claim the sale, or the cookie window is long enough that old clicks win credit for customers who came back through your own channels.</p>
+
+  <h3>6. Reversals are missing or wrong</h3>
+  <p>Refunds, chargebacks, cancellations inside a trial period and fraudulent orders should reverse the commission. If reversals are not synced, you overpay. If they are synced too aggressively, for example reversing a commission for a downgrade rather than a refund, partners lose earnings they were entitled to under your own terms.</p>
+
+  <h2>A test protocol: one real click per path</h2>
+  <p>The fastest way to find a break is to stop reasoning about the setup and test it. Use a test partner account and walk through every path a real customer can take.</p>
+  <ol>
+    <li><strong>List the conversion paths.</strong> Every landing page partners link to, every checkout or sign-up flow, every payment method, every plan, mobile and desktop, and any path that ends in your product or with a sales team.</li>
+    <li><strong>Click a real partner link</strong> for each path, in a clean browser session, and complete a real or test order.</li>
+    <li><strong>Check the click ID survives.</strong> Watch the URL and cookies through each redirect to the confirmation step. Note exactly where it disappears.</li>
+    <li><strong>Confirm the conversion lands</strong> in the affiliate platform, against the right partner, with the right amount and currency.</li>
+    <li><strong>Repeat in a privacy-focused browser</strong> and with the consent banner ignored or declined, to see what happens to the share of visitors who do that.</li>
+    <li><strong>Test a refund</strong> and confirm the reversal arrives and matches your terms.</li>
+    <li><strong>Test a conflict:</strong> click one partner link, then another, then use a coupon, and confirm the credit goes where your written policy says it should.</li>
+  </ol>
+  <p>Write the results down as a simple table of path, result and fix owner. Re-run it after every checkout, payment, consent or domain change. Most tracking breaks are introduced by changes that had nothing to do with the affiliate program.</p>
+
+  <h2>Reconcile the platform against your own orders every month</h2>
+  <p>Testing tells you whether a path works today. Reconciliation tells you how much is going missing in practice. The method is simple: capture the partner's click ID or coupon code on your side and store it with the order, then compare your own count of partner-sourced orders with what the affiliate platform recorded for the same period.</p>
+  <p>Break any gap down by payment method, device, browser, product and partner. A small, stable gap is normal for most setups. A gap that is concentrated in one segment is a break with an address.</p>
+
+  <h3>A worked example: reading a reconciliation gap</h3>
+  <p>This is an illustration with made-up round numbers, to show the reasoning. It is not a real program.</p>
+  <p>A subscription business stores the partner click ID with each order. In one month its backend shows 400 orders that carry a click ID. The affiliate platform shows 340 conversions. The gap is 60 orders, 15 percent.</p>
+  <ul>
+    <li>Split by payment method, card orders are almost fully matched. Nearly all of the missing orders were paid through an off-site payment method that returns customers to a different confirmation page, one without the conversion call.</li>
+    <li>Split by product, a plan launched two months earlier has a lower match rate, because its checkout page was built after tracking was set up.</li>
+  </ul>
+  <p>Two specific fixes come out of one table: fire the conversion from the server when the order is created, rather than from a confirmation page, and add the new plan's checkout to the test protocol.</p>
+  <p>To get a rough sense of what a gap like that might be worth per month, the <a href="../revenue-leak-calculator.html">free revenue leak calculator</a> gives an estimate from numbers you already have. The monitoring metrics that should sit next to it are in <a href="affiliate-program-kpis.html">affiliate program KPIs: 12 metrics to track</a>.</p>
+
+  <h2>When to move to server-side tracking</h2>
+  <p>Server-side tracking, often called postback or server-to-server tracking, stores the click ID on your side at the start of the visit and reports the conversion from your server when the order is created. It does not depend on a script firing on the confirmation page or on a cookie surviving in the customer's browser.</p>
+  <p>It is worth the work when any of these is true: you sell subscriptions or recurring plans, customers convert in your product or through a sales team, you use more than one checkout or payment provider, or your reconciliation gap keeps coming back after fixes. Most affiliate platforms support it. The hard part is not the platform. It is making sure the click ID is captured on every landing page and stored with the customer record before anything else can lose it.</p>
+  <p>Keep the browser-side tracking running alongside it during the switch, and reconcile both against your orders for a month or two before you rely on server-side alone.</p>
+
+  <h2>Write down your attribution policy and publish it</h2>
+  <p>A large share of tracking disputes are not technical. The tracking did what it was configured to do, and nobody had told the partner what that was. A one-page attribution policy prevents most of them. It should state:</p>
+  <ul>
+    <li>The attribution model, such as last click, and the cookie or attribution window.</li>
+    <li>How coupon codes are treated when a partner link also touched the sale.</li>
+    <li>How your own paid ads, email and retargeting are treated against partner clicks.</li>
+    <li>What is not allowed, such as bidding on your brand name, and what happens if it is found.</li>
+    <li>What reverses a commission, and in what time frame.</li>
+    <li>How recurring commission is attached and for how long.</li>
+    <li>How partners raise a missing-commission claim, what to include, and how fast you reply.</li>
+  </ul>
+  <p>Put the short version on your program page and link the full version from the partner dashboard. Clear rules are also a recruitment asset: experienced partners check tracking and attribution terms before they agree to promote you, as covered in <a href="how-to-recruit-affiliates.html">how to recruit affiliates</a>.</p>
+
+  <h2>Common affiliate tracking mistakes</h2>
+  <ul>
+    <li><strong>Treating tracking as a one-time setup.</strong> The setup was right on launch day. Every site, checkout and consent change since then is a chance it broke.</li>
+    <li><strong>Ignoring missing-commission claims.</strong> Each claim is free test data. Log them, look for patterns and reply to every one.</li>
+    <li><strong>Leaving attribution conflicts to default settings.</strong> If nobody chose the rule for coupons versus content partners, the default is choosing for you.</li>
+    <li><strong>Fixing forward without crediting back.</strong> When you find a break, credit affected partners from your backend data where you can. It is the fastest way to rebuild trust.</li>
+  </ul>
+
+  <h2>Frequently asked questions</h2>
+
+  <h3>Why are my affiliate sales not tracking?</h3>
+  <p>Usually because the partner's click ID is lost somewhere between the click and the conversion event. Common causes are redirects that strip URL parameters, a checkout on a different domain, browser limits on cookies, conversion pixels that do not fire on every thank-you page or payment method, and sales that close outside the website, such as in-app upgrades or deals closed by a sales team. Test each conversion path with a real click and a real order to find which one breaks.</p>
+
+  <h3>What is the difference between pixel tracking and server-side (postback) tracking?</h3>
+  <p>Pixel tracking fires a script or image in the customer's browser on the confirmation page and relies on a cookie set at the click. Server-side or postback tracking stores the partner's click ID with the order on your side and sends the conversion to the affiliate platform from your server. Server-side tracking is less exposed to browser restrictions, ad blockers and missed thank-you pages, but it needs the click ID captured and stored correctly at the start of the session.</p>
+
+  <h3>How do you check whether your affiliate platform is missing sales?</h3>
+  <p>Reconcile it against your own order data every month. Take the orders in your backend that carry an affiliate click ID or partner coupon, compare them with the conversions the platform recorded for the same period, and break the gap down by payment method, device, product and partner. A small, stable gap is normal. A gap concentrated in one path points straight at the break.</p>
+
+  <h3>Should affiliate programs use last-click or first-click attribution?</h3>
+  <p>Most programs use last-click because it is simple and widely understood by partners. The choice matters less than writing it down and applying it consistently, including how coupons, your own paid ads and other partners are treated when they touch the same sale. If your program depends on content partners who introduce buyers early, consider rules that protect them, such as ignoring coupon-only touches or giving a share of credit to the first partner.</p>
+
+  <h3>How should you handle affiliate missing-commission claims?</h3>
+  <p>Have a written process: what a partner must send (order date, approximate value, the link used), how long you take to reply, and how you check the claim against your order data. Answer every claim, even when the answer is no, and log them. A cluster of claims from one partner type, device or payment method is often the first sign of a tracking break.</p>
+
+  <div class="article-cta">
+    <p><strong>Not sure your tracking is catching every partner sale?</strong> The <a href="../index.html#fees">Affiliate Program Audit</a> tests your conversion paths, compares what the platform records with what partners actually drove, and rates tracking alongside recruitment, activation, payouts, retention and creative, with the fixes ranked by revenue impact. Express Audit $297, Full Audit $1,950.</p>
+    <a class="btn btn-primary" href="../index.html#fees">Request Audit</a>
+  </div>
+
+  <h2>Related reading</h2>
+  <ul>
+    <li><a href="affiliate-program-audit-checklist.html">Affiliate program audit checklist: the six elements to rate</a></li>
+    <li><a href="affiliate-program-kpis.html">Affiliate program KPIs: 12 metrics to track and what they tell you</a></li>
+    <li><a href="why-affiliates-stop-promoting.html">Why affiliates stop promoting your program</a></li>
+    <li><a href="affiliate-commission-structure.html">Affiliate commission structure: models, examples and how to choose</a></li>
+    <li><a href="../revenue-leak-calculator.html">Free revenue leak calculator</a></li>
+  </ul>
+</article>
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div><a class="logo" href="../index.html#top"><img class="logo-mark" src="../assets/traffic-goat-logo.png" alt="" width="44" height="44" /><span>Traffic Goat</span></a><p>AI Revenue Systems | Affiliate Growth | Monetization Infrastructure</p></div>
+    <div><a href="../index.html#findings">The findings</a><a href="../index.html#surveyor">Surveyor</a><a href="../index.html#fees">Fee schedule</a></div>
+  </div>
+</footer>
+</body>
+</html>
