@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Affiliate Fraud Detection: How to Audit Affiliate Traffic Quality - Traffic Goat</title>
-  <meta name="description" content="Affiliate fraud detection for program owners: the seven common affiliate fraud types, the signals each one leaves in your data, a step-by-step affiliate traffic quality check, and what to do when you find it." />
+  <meta name="description" content="Affiliate fraud detection for program owners: the eight common affiliate fraud types, the signals each one leaves in your data, a step-by-step affiliate traffic quality check, and what to do when you find it." />
   <meta property="og:title" content="Affiliate Fraud Detection: How to Audit Affiliate Traffic Quality" />
   <meta property="og:description" content="Cookie stuffing, brand bidding, coupon and toolbar hijacking, fake leads, bot clicks, self-referral and attribution overwriting: how to spot fake affiliate traffic in your own reports and what to do about it." />
   <meta property="og:type" content="article" />
@@ -31,7 +31,7 @@
       "@context": "https://schema.org",
       "@type": "Article",
       "headline": "Affiliate Fraud Detection: How to Audit Affiliate Traffic Quality",
-      "description": "An operator's guide to affiliate fraud detection: the seven common affiliate fraud types (cookie stuffing, brand bidding, coupon and toolbar hijacking, fake leads and incentivised traffic, bot clicks, self-referral and stacking, attribution overwriting), the signals each leaves in your own data, a step-by-step affiliate traffic quality audit with the reports to pull and the ratios to compare, what to do when you find fraud, and when to bring in an outside audit.",
+      "description": "An operator's guide to affiliate fraud detection: the eight common affiliate fraud types (cookie stuffing, brand bidding, coupon and toolbar hijacking, fake leads and incentivised traffic, bot clicks, self-referral and stacking, attribution overwriting, transaction laundering), the signals each leaves in your own data, a step-by-step affiliate traffic quality audit with the reports to pull and the ratios to compare, what to do when you find fraud, and when to bring in an outside audit.",
       "datePublished": "2026-11-10",
       "dateModified": "2026-11-10",
       "mainEntityOfPage": "https://traffic-goat.com/blog/affiliate-fraud-detection.html",
@@ -85,12 +85,12 @@
 
   <p>That is why affiliate fraud detection is less about catching criminals and more about checking that the commission you pay matches the value partners create. Some of what you find is outright fraud. Much more is grey-area behaviour your terms never clearly banned, or banned and never enforced.</p>
 
-  <p>This post covers the seven affiliate fraud types worth knowing, the signal each one leaves in data you already have, a step-by-step affiliate traffic quality check with the reports to pull and the ratios to compare, what to do when you find a problem, and when it makes sense to bring in an outside audit. If your issue is the opposite, partners whose genuine sales are not being credited, that is a tracking problem and is covered in <a href="affiliate-tracking-issues.html">affiliate tracking issues</a>.</p>
+  <p>This post covers the eight affiliate fraud types worth knowing, the signal each one leaves in data you already have, a step-by-step affiliate traffic quality check with the reports to pull and the ratios to compare, what to do when you find a problem, and when it makes sense to bring in an outside audit. If your issue is the opposite, partners whose genuine sales are not being credited, that is a tracking problem and is covered in <a href="affiliate-tracking-issues.html">affiliate tracking issues</a>.</p>
 
   <h2>A note on the numbers</h2>
   <p>There is no universal benchmark for "clean" affiliate traffic. Conversion rates, reversal rates and click-to-purchase times differ widely by niche, price point and partner type, so a review site and a cashback site in the same program should look nothing alike. Any ranges or thresholds below are indicative rules of thumb from operating experience, not survey data or industry statistics. The most reliable benchmark is your own program: compare each partner against the program average and against partners of the same type, and look for the outliers.</p>
 
-  <h2>The seven affiliate fraud types</h2>
+  <h2>The eight affiliate fraud types</h2>
   <p>For each type: what it is, why it costs you money, and the signals that usually give it away.</p>
 
   <h3>1. Cookie stuffing</h3>
@@ -128,6 +128,11 @@
   <p><strong>Why it costs money:</strong> credit moves away from the partners who create demand and toward the ones who intercept it. You keep paying the same total commission, but you are paying the wrong people, and the partners who drive new customers slowly give up.</p>
   <p><strong>Signals in the data:</strong> a high share of a partner's orders where another affiliate touched the same customer earlier, if your platform reports multi-touch paths; a short click-to-purchase time; and a low share of new customers. Without path data, check who received the credit on sales your content partners say went missing.</p>
 
+  <h3>8. Transaction laundering and stolen-card orders</h3>
+  <p><strong>What it is:</strong> orders placed through an affiliate link with stolen card details, or a partner pushing payments for another business through your checkout so the money looks like ordinary sales. A common version is a partner placing high-value orders on compromised cards, collecting the commission at the end of the month, and leaving you with the chargebacks after the payout has gone out.</p>
+  <p><strong>Why it costs money:</strong> you lose the goods, pay the commission, pay chargeback fees, and can put your payment processing at risk if your chargeback rate climbs. It is the fraud type most likely to cost more than the commission itself.</p>
+  <p><strong>Signals in the data:</strong> orders concentrated in high-value or easy-to-resell products, billing and shipping addresses that do not match, several cards used from one device or IP, chargebacks arriving weeks after the commission was approved, and a new partner with a sudden run of large orders. Keep a payment-risk check on affiliate orders and hold commission until the chargeback window has passed.</p>
+
   <h2>How to audit affiliate traffic quality, step by step</h2>
   <p>You do not need a fraud tool to run a first pass. You need your affiliate platform export, your own order data and a few hours. Work through these steps in order.</p>
 
@@ -148,6 +153,7 @@
     <li><strong>Lead-to-customer rate.</strong> For lead programs, the one ratio that matters most. Leads that never become customers are leads you should not pay full rate for.</li>
     <li><strong>Commission as a share of partner revenue.</strong> Watch for partners earning bonuses or top-tier rates through volume that does not survive the checks above.</li>
   </ul>
+  <p><strong>A worked example (made-up numbers, for illustration only):</strong> say the program average is a 3% click-to-order rate, an 8% refund rate and 45% new customers. Partner A, a review blog, sits at 2.5%, 7% and 60%. Partner B, a coupon extension, sits at 22%, 9% and 12%, with a median click-to-purchase time of 90 seconds. Partner A looks normal for its type. Partner B is not proven to be doing anything wrong, but the combination of very fast clicks and very few new customers says it is mostly collecting credit at checkout, so it goes to the top of the Step 4 list.</p>
   <p>The broader set of program metrics these ratios sit inside is in <a href="affiliate-program-kpis.html">affiliate program KPIs</a>.</p>
 
   <h3>Step 4: check the traffic source yourself</h3>
