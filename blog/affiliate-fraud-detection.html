@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Affiliate Fraud Detection: How to Audit Affiliate Traffic Quality - Traffic Goat</title>
+  <meta name="description" content="Affiliate fraud detection for program owners: the seven common affiliate fraud types, the signals each one leaves in your data, a step-by-step affiliate traffic quality check, and what to do when you find it." />
+  <meta property="og:title" content="Affiliate Fraud Detection: How to Audit Affiliate Traffic Quality" />
+  <meta property="og:description" content="Cookie stuffing, brand bidding, coupon and toolbar hijacking, fake leads, bot clicks, self-referral and attribution overwriting: how to spot fake affiliate traffic in your own reports and what to do about it." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://traffic-goat.com/blog/affiliate-fraud-detection.html" />
+  <meta property="og:image" content="https://traffic-goat.com/assets/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Affiliate Fraud Detection: How to Audit Affiliate Traffic Quality" />
+  <meta name="twitter:description" content="Cookie stuffing, brand bidding, coupon and toolbar hijacking, fake leads, bot clicks, self-referral and attribution overwriting: how to spot fake affiliate traffic in your own reports and what to do about it." />
+  <meta name="twitter:image" content="https://traffic-goat.com/assets/og-image.png" />
+  <link rel="icon" href="../favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" href="../assets/favicon.png" />
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WJLZ3XMCFH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WJLZ3XMCFH');
+  </script>
+  <link rel="canonical" href="https://traffic-goat.com/blog/affiliate-fraud-detection.html" />
+  <link rel="stylesheet" href="../styles.css" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Affiliate Fraud Detection: How to Audit Affiliate Traffic Quality",
+      "description": "An operator's guide to affiliate fraud detection: the seven common affiliate fraud types (cookie stuffing, brand bidding, coupon and toolbar hijacking, fake leads and incentivised traffic, bot clicks, self-referral and stacking, attribution overwriting), the signals each leaves in your own data, a step-by-step affiliate traffic quality audit with the reports to pull and the ratios to compare, what to do when you find fraud, and when to bring in an outside audit.",
+      "datePublished": "2026-11-10",
+      "dateModified": "2026-11-10",
+      "mainEntityOfPage": "https://traffic-goat.com/blog/affiliate-fraud-detection.html",
+      "image": "https://traffic-goat.com/assets/og-image.png",
+      "author": {"@type": "Person", "@id": "https://traffic-goat.com/#adam", "name": "Adam S."},
+      "publisher": {"@type": "Organization", "@id": "https://traffic-goat.com/#org", "name": "Traffic Goat", "logo": {"@type": "ImageObject", "url": "https://traffic-goat.com/assets/traffic-goat-logo.png"}}
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type":"Question","name":"What is affiliate fraud?","acceptedAnswer":{"@type":"Answer","text":"Affiliate fraud is any way a partner earns commission for a sale, lead or click they did not genuinely cause, or that was not genuine in the first place. It ranges from outright fake orders and bot clicks to grey-area behaviour such as bidding on your brand name, stuffing cookies or overwriting the attribution of another partner. The common thread is that you pay for value the partner did not create."}},
+        {"@type":"Question","name":"What are the most common affiliate fraud types?","acceptedAnswer":{"@type":"Answer","text":"The most common affiliate fraud types are cookie stuffing, brand bidding or trademark poaching in paid search, coupon and browser-extension hijacking at checkout, fake or incentivised leads, bot and click fraud, self-referral and commission stacking, and attribution overwriting where a partner takes credit at the last moment for a sale another partner or channel drove."}},
+        {"@type":"Question","name":"How do you spot fake affiliate traffic?","acceptedAnswer":{"@type":"Answer","text":"Compare each partner against your program average on a few ratios: clicks to orders, time from click to purchase, reversal and refund rate, new versus returning customers, and lead-to-customer rate. Fake affiliate traffic usually stands out as an extreme on one or more of these, such as thousands of clicks with almost no sales, sales seconds after a click, or leads that never answer the phone. Then check the traffic source yourself before you act."}},
+        {"@type":"Question","name":"How often should you run an affiliate traffic quality check?","acceptedAnswer":{"@type":"Answer","text":"A light check of partner-level ratios is worth doing monthly, ideally before commissions are approved for payment. A deeper review that includes search checks, test orders and a look at reversals by partner is worth doing every quarter, and always after a commission change, a new partner type joining the program or a platform migration."}},
+        {"@type":"Question","name":"Can you claw back commission paid on fraudulent sales?","acceptedAnswer":{"@type":"Answer","text":"Usually only if your program terms allow it. Most affiliate platforms let you reverse pending commissions before they are paid, so the strongest protection is a validation window long enough to catch refunds and checks before payout. Recovering commission that has already been paid depends on the terms partners agreed to, the platform or network rules, and how clear your evidence is. Write the clawback right into the terms before you need it."}}
+      ]
+    }
+  </script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <a class="logo" href="../index.html#top"><img class="logo-mark" src="../assets/traffic-goat-logo.png" alt="" width="44" height="44" /><span>Traffic Goat</span></a>
+    <nav>
+      <a href="../index.html#findings">The findings</a>
+      <a href="../index.html#scope">Scope</a>
+      <a href="../index.html#surveyor">Surveyor</a>
+      <a href="../index.html#insights">Insights</a>
+    </nav>
+    <div class="nav-actions">
+      <div class="social-links social-links--nav" aria-label="Traffic Goat social profiles">
+        <a href="https://www.linkedin.com/company/trafficgoat" target="_blank" rel="noopener noreferrer" aria-label="Traffic Goat on LinkedIn">in</a>
+        <a href="https://www.facebook.com/profile.php?id=61590358515349" target="_blank" rel="noopener noreferrer" aria-label="Traffic Goat on Facebook">f</a>
+      </div>
+      <a class="nav-cta" href="../index.html#fees" data-track="nav-audit">Request Audit</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<article class="container article">
+  <a class="back-link" href="../index.html#insights">&larr; Back to Insights</a>
+  <span class="eyebrow">Affiliate Systems</span>
+  <h1>Affiliate Fraud Detection: How to Audit Affiliate Traffic Quality</h1>
+  <p class="article-meta">Traffic Goat Insights - By Adam S.</p>
+
+  <p>Most affiliate fraud does not look like fraud. It looks like a partner who is doing well: sales up, excellent conversion rate, near the top of the monthly report. The payout gets approved and nobody asks whether those customers would have bought anyway, whether the leads were real, or whether the partner sent anyone at all.</p>
+
+  <p>That is why affiliate fraud detection is less about catching criminals and more about checking that the commission you pay matches the value partners create. Some of what you find is outright fraud. Much more is grey-area behaviour your terms never clearly banned, or banned and never enforced.</p>
+
+  <p>This post covers the seven affiliate fraud types worth knowing, the signal each one leaves in data you already have, a step-by-step affiliate traffic quality check with the reports to pull and the ratios to compare, what to do when you find a problem, and when it makes sense to bring in an outside audit. If your issue is the opposite, partners whose genuine sales are not being credited, that is a tracking problem and is covered in <a href="affiliate-tracking-issues.html">affiliate tracking issues</a>.</p>
+
+  <h2>A note on the numbers</h2>
+  <p>There is no universal benchmark for "clean" affiliate traffic. Conversion rates, reversal rates and click-to-purchase times differ widely by niche, price point and partner type, so a review site and a cashback site in the same program should look nothing alike. Any ranges or thresholds below are indicative rules of thumb from operating experience, not survey data or industry statistics. The most reliable benchmark is your own program: compare each partner against the program average and against partners of the same type, and look for the outliers.</p>
+
+  <h2>The seven affiliate fraud types</h2>
+  <p>For each type: what it is, why it costs you money, and the signals that usually give it away.</p>
+
+  <h3>1. Cookie stuffing</h3>
+  <p><strong>What it is:</strong> a partner drops your affiliate cookie on a visitor's browser without that visitor ever choosing to click a link. Common methods are hidden frames or invisible images that load the tracking URL, pop-unders, and redirects from unrelated pages. When that visitor later buys from you for any reason, the partner gets the commission.</p>
+  <p><strong>Why it costs money:</strong> you pay for sales the partner did not influence at all, and the partner who did introduce the customer may lose the credit.</p>
+  <p><strong>Signals in the data:</strong> very high click counts with a very low click-to-order rate, clicks with no referrer or unrelated referrers, a long gap between click and purchase (the visitor was never shopping when the cookie was set), a high share of returning customers, and click volume that jumps with no change in the partner's content.</p>
+
+  <h3>2. Brand bidding and PPC trademark poaching</h3>
+  <p><strong>What it is:</strong> a partner bids on your brand name, product names or misspellings in paid search, sometimes using your brand in the ad text or display URL, and routes the click through their affiliate link. Some do it openly, others only show the ad outside your office hours or outside your home country so you are less likely to see it.</p>
+  <p><strong>Why it costs money:</strong> people searching your brand name already intend to buy from you. You pay commission on traffic your own organic listing or brand campaign would have captured, and you may also pay more for your own brand clicks because a partner is bidding against you.</p>
+  <p><strong>Signals in the data:</strong> a partner with a very high conversion rate and a very short click-to-purchase time, a large share of orders landing on your homepage rather than a product page, and a rise in your own brand campaign cost per click. Check by searching your brand name, brand plus "coupon" and brand plus "discount" from several locations and devices, or use an ad-monitoring tool, and note which affiliate links appear behind the ads.</p>
+
+  <h3>3. Coupon and toolbar hijacking</h3>
+  <p><strong>What it is:</strong> a browser extension, toolbar or coupon site inserts itself at checkout. The customer is already on your cart page, the extension pops up with a code or an "activate cashback" prompt, and the click sets an affiliate cookie that overwrites whoever was credited before. Coupon sites do something similar by listing codes they do not have, so a "reveal code" click sets the cookie whether the code works or not.</p>
+  <p><strong>Why it costs money:</strong> the customer had already decided to buy. You pay commission plus, often, a discount on an order you had won. The content partner who did the persuading loses the credit, which over time teaches your best partners that promoting you does not pay.</p>
+  <p><strong>Signals in the data:</strong> clicks that happen seconds or a few minutes before purchase, a high share of orders where the click came from your own checkout or cart pages, codes being used that you never issued to that partner, and coupon or extension partners at the top of the revenue report while content partners report falling credit. The trade-offs of paying coupon partners at all are covered in <a href="affiliate-commission-structure.html">affiliate commission structure</a>.</p>
+
+  <h3>4. Fake leads and incentivised traffic</h3>
+  <p><strong>What it is:</strong> in lead-based programs, partners submit leads that are invented, recycled from old lists, or filled in by people who were paid or rewarded to do it. In sale-based programs, incentivised traffic means visitors who are offered cashback, points or a reward to sign up or buy, when the program terms did not allow it.</p>
+  <p><strong>Why it costs money:</strong> fake leads cost you the commission plus the time your sales team spends chasing people who never wanted to hear from you. Incentivised traffic is not always fraud, but it converts poorly downstream, churns fast and is often refunded.</p>
+  <p><strong>Signals in the data:</strong> a low lead-to-customer rate against other partners, unreachable phones or bouncing emails, duplicate details, form completion times too fast for a human, many leads from one IP range, and lead spikes just before a payout tier threshold. For subscriptions, high first-cycle cancellation from one partner is a strong flag.</p>
+
+  <h3>5. Bot clicks and click fraud</h3>
+  <p><strong>What it is:</strong> automated traffic that generates clicks, sign-ups or installs. In a pay-per-click or pay-per-lead deal the bots are the fraud. In a pay-per-sale program, bot clicks are often used to inflate click counts so that a partner looks valuable, or to stuff cookies at scale.</p>
+  <p><strong>Why it costs money:</strong> directly if you pay for clicks or leads, and indirectly because inflated data hides which partners are actually working and can trigger bonuses based on volume.</p>
+  <p><strong>Signals in the data:</strong> flat round-the-clock click volume with no daily pattern, very high bounce rate and near-zero time on site for that partner's traffic, concentrations of data-centre IPs, uniform or outdated user agents, and click spikes with no matching change in orders.</p>
+
+  <h3>6. Self-referral and commission stacking</h3>
+  <p><strong>What it is:</strong> self-referral is a partner buying through their own link to take the commission as a discount, or signing up friends and family accounts to do the same. Stacking is when one person or business runs several affiliate accounts, or combines an affiliate commission with a referral reward, a cashback payout and a discount on the same order, so you pay more than once for one sale.</p>
+  <p><strong>Why it costs money:</strong> you pay acquisition commission on a customer you acquired by accident, or you pay two or three rewards for one acquisition.</p>
+  <p><strong>Signals in the data:</strong> orders where the customer name, email, address, card or IP matches the partner's account, several affiliate accounts sharing payout details, a partner whose orders mostly come from one customer, and orders that triggered more than one reward program.</p>
+
+  <h3>7. Attribution overwriting</h3>
+  <p><strong>What it is:</strong> a partner deliberately places themselves at the end of the buying journey to take credit under a last-click rule. Coupon hijacking and brand bidding are two forms of it. Others include retargeting networks that serve ads to people who have just visited your site, and "deal" sites that rank for your brand terms to intercept the final search before purchase.</p>
+  <p><strong>Why it costs money:</strong> credit moves away from the partners who create demand and toward the ones who intercept it. You keep paying the same total commission, but you are paying the wrong people, and the partners who drive new customers slowly give up.</p>
+  <p><strong>Signals in the data:</strong> a high share of a partner's orders where another affiliate touched the same customer earlier, if your platform reports multi-touch paths; a short click-to-purchase time; and a low share of new customers. Without path data, check who received the credit on sales your content partners say went missing.</p>
+
+  <h2>How to audit affiliate traffic quality, step by step</h2>
+  <p>You do not need a fraud tool to run a first pass. You need your affiliate platform export, your own order data and a few hours. Work through these steps in order.</p>
+
+  <h3>Step 1: pull the reports</h3>
+  <p>Export six to twelve months by partner: clicks, orders, revenue, commission and reversals. From your own systems, pull orders with the affiliate ID, new or returning customer, refund and chargeback status, coupon code and landing page. For lead programs, add the lead outcome from your CRM. If platform and order totals do not roughly match, fix that first, because every ratio below depends on it.</p>
+
+  <h3>Step 2: segment partners by type</h3>
+  <p>Tag every partner with real volume as content, coupon, cashback, paid search, email, influencer or other. A coupon site always converts faster than a blog, so compare each partner against its peer group as well as the whole program.</p>
+
+  <h3>Step 3: compare the core ratios</h3>
+  <p>For each partner and each partner type, work out these ratios and look for extremes in either direction:</p>
+  <ul>
+    <li><strong>Click-to-order rate.</strong> Very low with very high click volume points at cookie stuffing or bots. Unusually high points at brand bidding or checkout interception.</li>
+    <li><strong>Median click-to-purchase time.</strong> Seconds to a few minutes suggests interception at checkout. Very long, with no matching content, suggests stuffed cookies.</li>
+    <li><strong>Reversal and refund rate.</strong> As an indicative marker, a partner at two or three times the program average deserves a closer look, whatever their volume.</li>
+    <li><strong>New-customer share.</strong> If most of a partner's orders come from existing customers, they are likely capturing demand rather than creating it.</li>
+    <li><strong>Average order value and basket mix.</strong> Orders unusually concentrated in high-value or easy-to-resell products can point at stolen card use.</li>
+    <li><strong>Lead-to-customer rate.</strong> For lead programs, the one ratio that matters most. Leads that never become customers are leads you should not pay full rate for.</li>
+    <li><strong>Commission as a share of partner revenue.</strong> Watch for partners earning bonuses or top-tier rates through volume that does not survive the checks above.</li>
+  </ul>
+  <p>The broader set of program metrics these ratios sit inside is in <a href="affiliate-program-kpis.html">affiliate program KPIs</a>.</p>
+
+  <h3>Step 4: check the traffic source yourself</h3>
+  <p>Numbers tell you where to look, not what is happening. For each flagged partner, visit their site, check where your links sit and confirm the content matches their sign-up. Search your brand terms from a few locations. Run your checkout on a clean browser with the popular coupon extensions installed. For leads, call a small sample.</p>
+
+  <h3>Step 5: run test orders</h3>
+  <p>Click a content partner's link, then let a coupon site or extension trigger, then buy. See who gets the credit, and repeat on mobile. This shows how attribution behaves in practice, which often differs from the terms. The full test protocol is in <a href="affiliate-tracking-issues.html">affiliate tracking issues</a>.</p>
+
+  <h3>Step 6: match orders against partner records</h3>
+  <p>Cross-match partner account details (name, email, address, payout details, IP where available) against customer orders. Any partner whose own details appear on their orders, or any group of accounts sharing payout details, is a self-referral or stacking question.</p>
+
+  <h3>Step 7: write it down and rank it</h3>
+  <p>For each flagged partner, write the signal, the evidence and the estimated commission at stake. Rank by money, not by how suspicious it feels. A small partner with a strange pattern matters less than a top-five partner taking credit for brand searches. If you want an indicative view of the total, the <a href="../revenue-leak-calculator.html">free revenue leak calculator</a> gives a rough estimate from a few inputs.</p>
+
+  <h2>What to do when you find it</h2>
+  <p>Not every finding is fraud, and not every fraud case needs the same response. Match the response to the evidence.</p>
+
+  <h3>Fix your terms first</h3>
+  <p>Many programs cannot act on what they find because their terms never banned it. At a minimum, terms should cover brand and trademark bidding (including misspellings and ad copy), coupon codes not issued to the partner, browser extensions and toolbars, incentivised traffic, self-referral, multiple accounts, and the right to reverse commission on fraud, refunds and breaches. Publish your attribution rule, and give partners notice before new terms apply.</p>
+
+  <h3>Use a validation window</h3>
+  <p>The easiest commission to recover is the one you have not paid. Set a validation or locking period long enough to cover your refund window and your own checks, and review flagged partners before commissions are approved. For subscriptions or leads, consider paying on a confirmed outcome, such as the first successful payment or a qualified lead, rather than on sign-up.</p>
+
+  <h3>Clawbacks</h3>
+  <p>Reversing pending commission on orders that were refunded, fake or in breach of terms is normal practice on most platforms and networks. Recovering commission that has already been paid is harder, and depends on what your terms say, the platform or network rules and the strength of your evidence. Document each case with the data and screenshots before you act, and keep the decision consistent across partners so it is defensible.</p>
+
+  <h3>Talk to the partner before you terminate</h3>
+  <p>For grey-area findings, such as bidding on a brand misspelling, contact the partner first. Show what you found, point to the term it breaks and set a deadline to fix it. Many will. For clear fraud, such as fake orders, self-referral or bots, reverse the commission, remove the partner and report it to the network if you use one. Keep the tone factual: your other partners will hear how you handled it.</p>
+
+  <h3>Re-check after the fix</h3>
+  <p>Watch the next one or two months. Customers who were being intercepted should now show up under content partners or your own channels.</p>
+
+  <h2>When to bring in an audit</h2>
+  <p>A self-review like the one above will find the obvious cases. It is a good fit when you have platform access, clean order data and someone with the time to do it properly. An outside audit makes more sense when:</p>
+  <ul>
+    <li><strong>The numbers do not reconcile.</strong> If platform sales and your orders disagree, you cannot tell fraud from broken tracking.</li>
+    <li><strong>Your top partners are the ones flagged.</strong> Acting against a large share of revenue deserves a second opinion and a clear evidence file.</li>
+    <li><strong>Commission cost is rising faster than revenue</strong> and nobody can say why.</li>
+    <li><strong>You are about to change terms, attribution rules or platforms.</strong></li>
+    <li><strong>Nobody owns the program closely enough</strong> to know what normal looks like.</li>
+  </ul>
+  <p>Fraud and traffic quality problems rarely arrive alone. They usually sit next to payout structures that reward the wrong behaviour and reporting nobody looks at, which is why the broader <a href="signs-your-affiliate-program-needs-an-audit.html">signs your affiliate program needs an audit</a> are worth checking at the same time. The free <a href="affiliate-program-audit-checklist.html">affiliate program audit checklist</a> covers the full program, and what different kinds of audit cost is in <a href="affiliate-program-audit-cost.html">affiliate program audit cost</a>.</p>
+
+  <h2>What we offer</h2>
+  <p>Our audits include tracking, payout structure and traffic quality, priced in the open on the <a href="../index.html#fees">fee schedule</a>:</p>
+  <ul>
+    <li><strong>Express Audit - $297 one-off.</strong> AI-accelerated, senior-reviewed. The fastest way to know what is broken.
+      <ul>
+        <li>Full program health scorecard</li>
+        <li>Competitor payout benchmark</li>
+        <li>Your top 3 revenue leaks</li>
+        <li>Prioritised 30-day action plan</li>
+        <li>Delivered in 48 hours</li>
+      </ul>
+    </li>
+    <li><strong>Full Audit and Strategy Call - $1,950 one-off.</strong> Everything in Express, plus a working session and a real roadmap.
+      <ul>
+        <li>Everything in the Express Audit</li>
+        <li>Deep recruitment and retention plan</li>
+        <li>60-minute strategy call, recorded</li>
+        <li>Custom 30-day growth roadmap</li>
+        <li>2 weeks of follow-up support</li>
+      </ul>
+    </li>
+  </ul>
+  <p>Both audits carry the same undertaking: if the survey does not identify at least 10x its fee in recoverable revenue, say so within 7 days and the fee is refunded in full.</p>
+  <p>If the findings show the program needs ongoing hands, Build and Scale covers the fixes carried out, or the program run as your fractional affiliate lead, scoped and priced after the audit, from $3K per month. Often, though, the result is a short list of fixes your own team can make, starting with the terms.</p>
+
+  <h2>Frequently asked questions</h2>
+
+  <h3>What is affiliate fraud?</h3>
+  <p>Affiliate fraud is any way a partner earns commission for a sale, lead or click they did not genuinely cause, or that was not genuine in the first place. It ranges from outright fake orders and bot clicks to grey-area behaviour such as bidding on your brand name, stuffing cookies or overwriting the attribution of another partner. The common thread is that you pay for value the partner did not create.</p>
+
+  <h3>What are the most common affiliate fraud types?</h3>
+  <p>The most common affiliate fraud types are cookie stuffing, brand bidding or trademark poaching in paid search, coupon and browser-extension hijacking at checkout, fake or incentivised leads, bot and click fraud, self-referral and commission stacking, and attribution overwriting where a partner takes credit at the last moment for a sale another partner or channel drove.</p>
+
+  <h3>How do you spot fake affiliate traffic?</h3>
+  <p>Compare each partner against your program average on a few ratios: clicks to orders, time from click to purchase, reversal and refund rate, new versus returning customers, and lead-to-customer rate. Fake affiliate traffic usually stands out as an extreme on one or more of these, such as thousands of clicks with almost no sales, sales seconds after a click, or leads that never answer the phone. Then check the traffic source yourself before you act.</p>
+
+  <h3>How often should you run an affiliate traffic quality check?</h3>
+  <p>A light check of partner-level ratios is worth doing monthly, ideally before commissions are approved for payment. A deeper review that includes search checks, test orders and a look at reversals by partner is worth doing every quarter, and always after a commission change, a new partner type joining the program or a platform migration.</p>
+
+  <h3>Can you claw back commission paid on fraudulent sales?</h3>
+  <p>Usually only if your program terms allow it. Most affiliate platforms let you reverse pending commissions before they are paid, so the strongest protection is a validation window long enough to catch refunds and checks before payout. Recovering commission that has already been paid depends on the terms partners agreed to, the platform or network rules, and how clear your evidence is. Write the clawback right into the terms before you need it.</p>
+
+  <div class="article-cta">
+    <p><strong>Found partners you cannot explain?</strong> The <a href="../index.html#fees">Affiliate Program Audit</a> rates recruitment, activation, payouts, retention, tracking and creative, benchmarks your payouts against competitors and ranks the fixes by revenue impact, so you stop paying for sales you would have had anyway. Express Audit $297, Full Audit $1,950, both fixed-fee and one-off.</p>
+    <a class="btn btn-primary" href="../index.html#fees">Request Audit</a>
+  </div>
+
+  <h2>Related reading</h2>
+  <ul>
+    <li><a href="affiliate-tracking-issues.html">Affiliate tracking issues: why partner sales go missing and how to fix them</a></li>
+    <li><a href="signs-your-affiliate-program-needs-an-audit.html">12 signs your affiliate program needs an audit (and a self-check for each)</a></li>
+    <li><a href="affiliate-program-audit-checklist.html">Affiliate program audit checklist: the six elements to rate</a></li>
+    <li><a href="affiliate-commission-structure.html">Affiliate commission structure: models, examples and how to choose</a></li>
+    <li><a href="affiliate-program-kpis.html">Affiliate program KPIs: 12 metrics to track and what they tell you</a></li>
+    <li><a href="affiliate-program-audit-cost.html">Affiliate program audit cost: what you pay, what you get and how to choose</a></li>
+    <li><a href="../revenue-leak-calculator.html">Free revenue leak calculator</a></li>
+  </ul>
+</article>
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div><a class="logo" href="../index.html#top"><img class="logo-mark" src="../assets/traffic-goat-logo.png" alt="" width="44" height="44" /><span>Traffic Goat</span></a><p>AI Revenue Systems | Affiliate Growth | Monetization Infrastructure</p></div>
+    <div><a href="../index.html#findings">The findings</a><a href="../index.html#surveyor">Surveyor</a><a href="../index.html#fees">Fee schedule</a></div>
+  </div>
+</footer>
+</body>
+</html>
