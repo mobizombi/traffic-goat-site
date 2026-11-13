@@ -658,6 +658,13 @@ p:last-child { margin-bottom: 0; }
 
   .fee-table td.cell-fee { text-align: left; padding-top: var(--s-3); padding-bottom: var(--s-3); }
   .cell-fee small { display: inline; margin-left: var(--s-2); }
+
+  /* Exhibit 1 on phones: fit all four columns so "0 / $0.00" is visible without sideways scroll. */
+  .exhibit table { min-width: 0; font-size: 13px; }
+  .exhibit th { font-size: 10px; letter-spacing: 0.02em; padding-right: var(--s-2); }
+  .exhibit td { padding-right: var(--s-2); }
+  .exhibit th:not(:first-child),
+  .exhibit td:not(:first-child) { white-space: nowrap; }
   .fee-action .btn { width: 100%; }
 }
 
