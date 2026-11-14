@@ -219,7 +219,7 @@ p:last-child { margin-bottom: 0; }
 .stamp {
   display: inline-block;
   border: 2px solid var(--signal);
-  color: var(--signal);
+  color: #B8302A; /* --signal darkened for text: 4.97:1 on paper (was 4.34:1) */
   font-weight: 700;
   font-size: 13px;
   letter-spacing: 0.08em;
@@ -1035,6 +1035,7 @@ input, select, textarea {
 .article h2 { font-size: 24px; margin: var(--s-7) 0 var(--s-3); max-width: none; }
 .article p, .article li { font-size: 17px; line-height: 1.6; }
 .back-link, .article-cta a { font-weight: 600; }
+.back-link { display: inline-block; margin-top: var(--s-5); }
 
 .footer { border-top: 2px solid var(--ink); }
 .footer-grid { display: grid; gap: var(--s-5); padding: var(--s-6) 0 var(--s-7); }
