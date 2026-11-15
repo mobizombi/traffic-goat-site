@@ -25,7 +25,7 @@
     gtag('config', 'G-WJLZ3XMCFH');
   </script>
   <link rel="canonical" href="https://traffic-goat.com/blog/affiliate-tracking-issues.html" />
-  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="../styles.css?v=20261115" />
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -153,6 +153,11 @@
   </ol>
   <p>Write the results down as a simple table of path, result and fix owner. Re-run it after every checkout, payment, consent or domain change. Most tracking breaks are introduced by changes that had nothing to do with the affiliate program.</p>
 
+  <aside class="article-midcta" aria-label="Affiliate Program Audit">
+    <p><strong>Rather have this checked for you?</strong> The Express Audit rates your program on recruitment, activation, payouts, retention, tracking and creative, and ranks the fixes by revenue. $297, delivered in 48 hours.</p>
+    <a href="../index.html#fees" data-track="mid-audit-affiliate-tracking-issues">See the audit and fees</a>
+  </aside>
+
   <h2>Reconcile the platform against your own orders every month</h2>
   <p>Testing tells you whether a path works today. Reconciliation tells you how much is going missing in practice. The method is simple: capture the partner's click ID or coupon code on your side and store it with the order, then compare your own count of partner-sourced orders with what the affiliate platform recorded for the same period.</p>
   <p>Break any gap down by payment method, device, browser, product and partner. A small, stable gap is normal for most setups. A gap that is concentrated in one segment is a break with an address.</p>
@@ -212,7 +217,7 @@
 
   <div class="article-cta">
     <p><strong>Not sure your tracking is catching every partner sale?</strong> The <a href="../index.html#fees">Affiliate Program Audit</a> tests your conversion paths, compares what the platform records with what partners actually drove, and rates tracking alongside recruitment, activation, payouts, retention and creative, with the fixes ranked by revenue impact. Express Audit $297, Full Audit $1,950.</p>
-    <a class="btn btn-primary" href="../index.html#fees">Request Audit</a>
+    <a class="btn btn-primary" href="../index.html#fees" data-track="end-audit-affiliate-tracking-issues">Request Audit</a>
   </div>
 
   <h2>Related reading</h2>
@@ -233,5 +238,14 @@
     <div><a href="../index.html#findings">The findings</a><a href="../index.html#surveyor">Surveyor</a><a href="../index.html#fees">Fee schedule</a></div>
   </div>
 </footer>
+<script>
+  document.querySelectorAll("[data-track]").forEach(function (link) {
+    link.addEventListener("click", function () {
+      if (typeof gtag === "function") {
+        gtag("event", "cta_click", { cta: link.dataset.track, destination: link.getAttribute("href"), page: location.pathname });
+      }
+    });
+  });
+</script>
 </body>
 </html>

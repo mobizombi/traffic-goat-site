@@ -25,7 +25,7 @@
     gtag('config', 'G-WJLZ3XMCFH');
   </script>
   <link rel="canonical" href="https://traffic-goat.com/blog/affiliate-program-terms-and-conditions.html" />
-  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="../styles.css?v=20261115" />
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -155,6 +155,11 @@
   </ul>
   <p>Gaps on the other side cost money too, just less visibly. Unexplained reversals, an unreliable payment date and one-sided change clauses are among the main reasons good partners go quiet, which is covered in <a href="why-affiliates-stop-promoting.html">why affiliates stop promoting your program</a>.</p>
 
+  <aside class="article-midcta" aria-label="Affiliate Program Audit">
+    <p><strong>Rather have this checked for you?</strong> The Express Audit rates your program on recruitment, activation, payouts, retention, tracking and creative, and ranks the fixes by revenue. $297, delivered in 48 hours.</p>
+    <a href="../index.html#fees" data-track="mid-audit-affiliate-program-terms-and-conditions">See the audit and fees</a>
+  </aside>
+
   <h2>Example wording for six key clauses</h2>
   <p>The examples below are illustrative only. They show the level of detail that removes ambiguity, in plain English. They are not legal advice and not a finished affiliate agreement template. Every number in them (percentages, days, amounts) is a made-up placeholder, not a recommendation or a benchmark. Have a lawyer adapt the wording to your business and jurisdiction.</p>
 
@@ -249,7 +254,7 @@
 
   <div class="article-cta">
     <p><strong>Not sure your terms match what the program actually pays for?</strong> The <a href="../index.html#fees">Affiliate Program Audit</a> rates recruitment, activation, payouts, retention, tracking and creative, benchmarks your payouts against competitors and ranks the fixes by revenue impact, so you can see where the program leaks before you rewrite the rules. Express Audit $297, Full Audit $1,950, both fixed-fee and one-off.</p>
-    <a class="btn btn-primary" href="../index.html#fees">Request Audit</a>
+    <a class="btn btn-primary" href="../index.html#fees" data-track="end-audit-affiliate-program-terms-and-conditions">Request Audit</a>
   </div>
 
   <h2>Related reading</h2>
@@ -272,5 +277,14 @@
     <div><a href="../index.html#findings">The findings</a><a href="../index.html#surveyor">Surveyor</a><a href="../index.html#fees">Fee schedule</a></div>
   </div>
 </footer>
+<script>
+  document.querySelectorAll("[data-track]").forEach(function (link) {
+    link.addEventListener("click", function () {
+      if (typeof gtag === "function") {
+        gtag("event", "cta_click", { cta: link.dataset.track, destination: link.getAttribute("href"), page: location.pathname });
+      }
+    });
+  });
+</script>
 </body>
 </html>

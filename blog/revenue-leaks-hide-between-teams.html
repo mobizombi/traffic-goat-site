@@ -24,7 +24,7 @@
     gtag('js', new Date());
     gtag('config', 'G-WJLZ3XMCFH');
   </script>
-  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="../styles.css?v=20261115" />
 </head>
 <body>
 <header class="site-header">
@@ -65,6 +65,11 @@
     <li><strong>Between acquisition and retention.</strong> Everyone is incentivized to bring people in. Nobody outside of "Retention" - if that team even exists - is incentivized to keep them.</li>
   </ul>
 
+  <aside class="article-midcta" aria-label="Affiliate Program Audit">
+    <p><strong>Rather have this checked for you?</strong> The Express Audit rates your program on recruitment, activation, payouts, retention, tracking and creative, and ranks the fixes by revenue. $297, delivered in 48 hours.</p>
+    <a href="../index.html#fees" data-track="mid-audit-revenue-leaks-hide-between-teams">See the audit and fees</a>
+  </aside>
+
   <h2>Why this needs systems thinking, not another campaign</h2>
   <p>The instinct when revenue underperforms is to launch something new: another channel, another offer, another campaign. But if the leak is in the handoff between two systems that already exist, a new campaign just pours more traffic into the same hole.</p>
 
@@ -72,7 +77,7 @@
 
   <div class="article-cta">
     <p><strong>Suspect you're leaking revenue somewhere you can't see from inside one team's metrics?</strong> A Revenue Leak Audit traces the full path and shows you exactly where it breaks.</p>
-    <a class="btn btn-primary" href="../index.html#fees">Request Audit</a>
+    <a class="btn btn-primary" href="../index.html#fees" data-track="end-audit-revenue-leaks-hide-between-teams">Request Audit</a>
   </div>
 </article>
 </main>
@@ -83,5 +88,14 @@
     <div><a href="../index.html#findings">The findings</a><a href="../index.html#surveyor">Surveyor</a><a href="../index.html#fees">Fee schedule</a></div>
   </div>
 </footer>
+<script>
+  document.querySelectorAll("[data-track]").forEach(function (link) {
+    link.addEventListener("click", function () {
+      if (typeof gtag === "function") {
+        gtag("event", "cta_click", { cta: link.dataset.track, destination: link.getAttribute("href"), page: location.pathname });
+      }
+    });
+  });
+</script>
 </body>
 </html>

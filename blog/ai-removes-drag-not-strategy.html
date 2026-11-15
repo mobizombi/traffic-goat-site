@@ -24,7 +24,7 @@
     gtag('js', new Date());
     gtag('config', 'G-WJLZ3XMCFH');
   </script>
-  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="../styles.css?v=20261115" />
 </head>
 <body>
 <header class="site-header">
@@ -70,6 +70,11 @@
 
   <p>None of that is strategic work. All of it eats hours that should go toward strategic work. A lean growth operator - one person doing what used to take a small team - doesn't have those hours to spare.</p>
 
+  <aside class="article-midcta" aria-label="Affiliate Program Audit">
+    <p><strong>Rather have this checked for you?</strong> The Express Audit rates your program on recruitment, activation, payouts, retention, tracking and creative, and ranks the fixes by revenue. $297, delivered in 48 hours.</p>
+    <a href="../index.html#fees" data-track="mid-audit-ai-removes-drag-not-strategy">See the audit and fees</a>
+  </aside>
+
   <h2>The actual leverage</h2>
   <p>The teams getting real value from AI right now aren't asking it "what should we do." They're asking it to handle the four hours of drag that happens after the decision is made - so the operator can make five more decisions that week instead of one.</p>
 
@@ -77,7 +82,7 @@
 
   <div class="article-cta">
     <p><strong>Want to know where your own operational drag is hiding?</strong> A Revenue Leak Audit maps exactly where AI workflows would buy back the most time - and where it shouldn't touch a decision at all.</p>
-    <a class="btn btn-primary" href="../index.html#fees">Request Audit</a>
+    <a class="btn btn-primary" href="../index.html#fees" data-track="end-audit-ai-removes-drag-not-strategy">Request Audit</a>
   </div>
 </article>
 </main>
@@ -88,5 +93,14 @@
     <div><a href="../index.html#findings">The findings</a><a href="../index.html#surveyor">Surveyor</a><a href="../index.html#fees">Fee schedule</a></div>
   </div>
 </footer>
+<script>
+  document.querySelectorAll("[data-track]").forEach(function (link) {
+    link.addEventListener("click", function () {
+      if (typeof gtag === "function") {
+        gtag("event", "cta_click", { cta: link.dataset.track, destination: link.getAttribute("href"), page: location.pathname });
+      }
+    });
+  });
+</script>
 </body>
 </html>

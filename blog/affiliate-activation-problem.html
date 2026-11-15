@@ -24,7 +24,7 @@
     gtag('js', new Date());
     gtag('config', 'G-WJLZ3XMCFH');
   </script>
-  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="../styles.css?v=20261115" />
 </head>
 <body>
 <header class="site-header">
@@ -65,6 +65,11 @@
     <li><strong>Payout structure doesn't match effort.</strong> If the math doesn't work for a serious affiliate, they'll run traffic somewhere else and keep your link in a drawer.</li>
   </ul>
 
+  <aside class="article-midcta" aria-label="Affiliate Program Audit">
+    <p><strong>Rather have this checked for you?</strong> The Express Audit rates your program on recruitment, activation, payouts, retention, tracking and creative, and ranks the fixes by revenue. $297, delivered in 48 hours.</p>
+    <a href="../index.html#fees" data-track="mid-audit-affiliate-activation-problem">See the audit and fees</a>
+  </aside>
+
   <h2>What activation actually looks like</h2>
   <p>Fixing this isn't about recruiting harder. It's about rebuilding the path from "approved" to "actually running traffic":</p>
   <ul>
@@ -78,7 +83,7 @@
 
   <div class="article-cta">
     <p><strong>Running an affiliate program that's full of dormant partners?</strong> A Revenue Leak Audit will tell you exactly where activation is breaking down - and what to fix first.</p>
-    <a class="btn btn-primary" href="../index.html#fees">Request Audit</a>
+    <a class="btn btn-primary" href="../index.html#fees" data-track="end-audit-affiliate-activation-problem">Request Audit</a>
   </div>
 
   <h2>Related reading</h2>
@@ -96,5 +101,14 @@
     <div><a href="../index.html#findings">The findings</a><a href="../index.html#surveyor">Surveyor</a><a href="../index.html#fees">Fee schedule</a></div>
   </div>
 </footer>
+<script>
+  document.querySelectorAll("[data-track]").forEach(function (link) {
+    link.addEventListener("click", function () {
+      if (typeof gtag === "function") {
+        gtag("event", "cta_click", { cta: link.dataset.track, destination: link.getAttribute("href"), page: location.pathname });
+      }
+    });
+  });
+</script>
 </body>
 </html>
