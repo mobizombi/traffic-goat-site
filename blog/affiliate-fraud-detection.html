@@ -25,7 +25,7 @@
     gtag('config', 'G-WJLZ3XMCFH');
   </script>
   <link rel="canonical" href="https://traffic-goat.com/blog/affiliate-fraud-detection.html" />
-  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="../styles.css?v=20261115" />
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -168,6 +168,11 @@
   <h3>Step 7: write it down and rank it</h3>
   <p>For each flagged partner, write the signal, the evidence and the estimated commission at stake. Rank by money, not by how suspicious it feels. A small partner with a strange pattern matters less than a top-five partner taking credit for brand searches. If you want an indicative view of the total, the <a href="../revenue-leak-calculator.html">free revenue leak calculator</a> gives a rough estimate from a few inputs.</p>
 
+  <aside class="article-midcta" aria-label="Affiliate Program Audit">
+    <p><strong>Rather have this checked for you?</strong> The Express Audit rates your program on recruitment, activation, payouts, retention, tracking and creative, and ranks the fixes by revenue. $297, delivered in 48 hours.</p>
+    <a href="../index.html#fees" data-track="mid-audit-affiliate-fraud-detection">See the audit and fees</a>
+  </aside>
+
   <h2>What to do when you find it</h2>
   <p>Not every finding is fraud, and not every fraud case needs the same response. Match the response to the evidence.</p>
 
@@ -241,7 +246,7 @@
 
   <div class="article-cta">
     <p><strong>Found partners you cannot explain?</strong> The <a href="../index.html#fees">Affiliate Program Audit</a> rates recruitment, activation, payouts, retention, tracking and creative, benchmarks your payouts against competitors and ranks the fixes by revenue impact, so you stop paying for sales you would have had anyway. Express Audit $297, Full Audit $1,950, both fixed-fee and one-off.</p>
-    <a class="btn btn-primary" href="../index.html#fees">Request Audit</a>
+    <a class="btn btn-primary" href="../index.html#fees" data-track="end-audit-affiliate-fraud-detection">Request Audit</a>
   </div>
 
   <h2>Related reading</h2>
@@ -264,5 +269,14 @@
     <div><a href="../index.html#findings">The findings</a><a href="../index.html#surveyor">Surveyor</a><a href="../index.html#fees">Fee schedule</a></div>
   </div>
 </footer>
+<script>
+  document.querySelectorAll("[data-track]").forEach(function (link) {
+    link.addEventListener("click", function () {
+      if (typeof gtag === "function") {
+        gtag("event", "cta_click", { cta: link.dataset.track, destination: link.getAttribute("href"), page: location.pathname });
+      }
+    });
+  });
+</script>
 </body>
 </html>

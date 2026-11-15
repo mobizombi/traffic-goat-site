@@ -25,7 +25,7 @@
     gtag('config', 'G-WJLZ3XMCFH');
   </script>
   <link rel="canonical" href="https://traffic-goat.com/blog/how-to-improve-affiliate-program-performance.html" />
-  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="../styles.css?v=20261115" />
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -134,6 +134,11 @@
   </ul>
   <p>The reasons partners drift away, and the warning signs that come first, are in <a href="why-affiliates-stop-promoting.html">why affiliates stop promoting your program</a>.</p>
 
+  <aside class="article-midcta" aria-label="Affiliate Program Audit">
+    <p><strong>Rather have this checked for you?</strong> The Express Audit rates your program on recruitment, activation, payouts, retention, tracking and creative, and ranks the fixes by revenue. $297, delivered in 48 hours.</p>
+    <a href="../index.html#fees" data-track="mid-audit-how-to-improve-affiliate-program-performance">See the audit and fees</a>
+  </aside>
+
   <h2>Step 4: Test whether your payout structure fits the partners you want</h2>
   <p>Partners compare programs by what they earn per click, not by the headline commission. A higher rate on a product that converts poorly can still lose to a lower rate on one that converts well. Structure also decides who you attract: a flat rate on first orders tends to suit coupon partners, while content partners often want recurring or tiered terms.</p>
   <ul>
@@ -205,7 +210,7 @@
 
   <div class="article-cta">
     <p><strong>Program flat and not sure which element is holding it back?</strong> The <a href="../index.html#fees">Affiliate Program Audit</a> rates recruitment, activation, payout structure, retention, tracking and creative against evidence from your program, names the binding constraint, and gives you the fixes ranked by revenue impact. Express Audit $297, Full Audit $1,950.</p>
-    <a class="btn btn-primary" href="../index.html#fees">Request Audit</a>
+    <a class="btn btn-primary" href="../index.html#fees" data-track="end-audit-how-to-improve-affiliate-program-performance">Request Audit</a>
   </div>
 
   <h2>Related reading</h2>
@@ -228,5 +233,14 @@
     <div><a href="../index.html#findings">The findings</a><a href="../index.html#surveyor">Surveyor</a><a href="../index.html#fees">Fee schedule</a></div>
   </div>
 </footer>
+<script>
+  document.querySelectorAll("[data-track]").forEach(function (link) {
+    link.addEventListener("click", function () {
+      if (typeof gtag === "function") {
+        gtag("event", "cta_click", { cta: link.dataset.track, destination: link.getAttribute("href"), page: location.pathname });
+      }
+    });
+  });
+</script>
 </body>
 </html>

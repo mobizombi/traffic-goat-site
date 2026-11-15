@@ -25,7 +25,7 @@
     gtag('config', 'G-WJLZ3XMCFH');
   </script>
   <link rel="canonical" href="https://traffic-goat.com/blog/affiliate-program-kpis.html" />
-  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="../styles.css?v=20261115" />
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -126,6 +126,11 @@
   <p><strong>Formula:</strong> total commission paid, divided by partner-sourced revenue net of refunds.</p>
   <p><strong>What it tells you:</strong> what the program really costs, after tiers, bonuses, coupons and reversals. It is often different from the rate on your program page, and it is the number to hold against your margins.</p>
 
+  <aside class="article-midcta" aria-label="Affiliate Program Audit">
+    <p><strong>Rather have this checked for you?</strong> The Express Audit rates your program on recruitment, activation, payouts, retention, tracking and creative, and ranks the fixes by revenue. $297, delivered in 48 hours.</p>
+    <a href="../index.html#fees" data-track="mid-audit-affiliate-program-kpis">See the audit and fees</a>
+  </aside>
+
   <h2>Stage 4: Revenue and customer quality</h2>
 
   <h3>8. Net partner-sourced revenue</h3>
@@ -209,7 +214,7 @@
 
   <div class="article-cta">
     <p><strong>Not sure which of your numbers is the real problem?</strong> The <a href="../index.html#fees">Affiliate Program Audit</a> pulls your recruitment, activation, partner economics, tracking and customer quality data into one view, finds where the program leaks, and hands back the fixes ranked by revenue impact. Express Audit $297, Full Audit $1,950.</p>
-    <a class="btn btn-primary" href="../index.html#fees">Request Audit</a>
+    <a class="btn btn-primary" href="../index.html#fees" data-track="end-audit-affiliate-program-kpis">Request Audit</a>
   </div>
 
   <h2>Related reading</h2>
@@ -230,5 +235,14 @@
     <div><a href="../index.html#findings">The findings</a><a href="../index.html#surveyor">Surveyor</a><a href="../index.html#fees">Fee schedule</a></div>
   </div>
 </footer>
+<script>
+  document.querySelectorAll("[data-track]").forEach(function (link) {
+    link.addEventListener("click", function () {
+      if (typeof gtag === "function") {
+        gtag("event", "cta_click", { cta: link.dataset.track, destination: link.getAttribute("href"), page: location.pathname });
+      }
+    });
+  });
+</script>
 </body>
 </html>

@@ -25,7 +25,7 @@
     gtag('config', 'G-WJLZ3XMCFH');
   </script>
   <link rel="canonical" href="https://traffic-goat.com/blog/why-affiliates-stop-promoting.html" />
-  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="../styles.css?v=20261115" />
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -112,6 +112,11 @@
   <h3>7. Terms changed against them</h3>
   <p>New restrictions on brand bidding, coupon use, traffic sources or commission on returning customers can make a partner's existing model unprofitable overnight. Sometimes these changes are right for the business. But if they were made without talking to the partners affected, expect those partners to leave without a word.</p>
 
+  <aside class="article-midcta" aria-label="Affiliate Program Audit">
+    <p><strong>Rather have this checked for you?</strong> The Express Audit rates your program on recruitment, activation, payouts, retention, tracking and creative, and ranks the fixes by revenue. $297, delivered in 48 hours.</p>
+    <a href="../index.html#fees" data-track="mid-audit-why-affiliates-stop-promoting">See the audit and fees</a>
+  </aside>
+
   <h2>A diagnostic you can run this week</h2>
   <p>You do not need new software for a first pass. You need an export from your affiliate platform and an hour of honest work.</p>
   <ol>
@@ -157,7 +162,7 @@
 
   <div class="article-cta">
     <p><strong>Want an outside read on why your partners went quiet?</strong> The <a href="../index.html#fees">Affiliate Program Audit</a> reviews your payouts, tracking, offer, terms and partner management against the programs your affiliates can choose instead, and hands back the causes ranked by revenue impact. Express Audit $297, Full Audit $1,950.</p>
-    <a class="btn btn-primary" href="../index.html#fees">Request Audit</a>
+    <a class="btn btn-primary" href="../index.html#fees" data-track="end-audit-why-affiliates-stop-promoting">Request Audit</a>
   </div>
 
   <h2>Related reading</h2>
@@ -175,5 +180,14 @@
     <div><a href="../index.html#findings">The findings</a><a href="../index.html#surveyor">Surveyor</a><a href="../index.html#fees">Fee schedule</a></div>
   </div>
 </footer>
+<script>
+  document.querySelectorAll("[data-track]").forEach(function (link) {
+    link.addEventListener("click", function () {
+      if (typeof gtag === "function") {
+        gtag("event", "cta_click", { cta: link.dataset.track, destination: link.getAttribute("href"), page: location.pathname });
+      }
+    });
+  });
+</script>
 </body>
 </html>

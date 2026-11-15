@@ -25,7 +25,7 @@
     gtag('config', 'G-WJLZ3XMCFH');
   </script>
   <link rel="canonical" href="https://traffic-goat.com/blog/how-to-recruit-affiliates.html" />
-  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="../styles.css?v=20261115" />
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -138,6 +138,11 @@
   </ol>
   <p>Clear rules on the page do two jobs. They tell serious partners you run a professional program, and they cut the low-quality applications you would otherwise have to review and reject.</p>
 
+  <aside class="article-midcta" aria-label="Affiliate Program Audit">
+    <p><strong>Rather have this checked for you?</strong> The Express Audit rates your program on recruitment, activation, payouts, retention, tracking and creative, and ranks the fixes by revenue. $297, delivered in 48 hours.</p>
+    <a href="../index.html#fees" data-track="mid-audit-how-to-recruit-affiliates">See the audit and fees</a>
+  </aside>
+
   <h2>Step 5: Use networks and marketplaces as a source, not a strategy</h2>
   <p>Affiliate networks and marketplaces handle tracking, payouts and compliance, and put your program in front of partners who browse for offers. The mistake is treating a listing as the strategy. Listing and waiting tends to bring in many applications from partners who join many programs and promote few. Approve the ones that fit your rules, keep your effort on direct outreach to your target list, and judge the network by how many of its partners become active, not by how many apply.</p>
 
@@ -197,7 +202,7 @@
 
   <div class="article-cta">
     <p><strong>Not sure who to recruit next, or whether recruitment is even the problem?</strong> The <a href="../index.html#fees">Affiliate Program Audit</a> rates your recruitment alongside activation, payouts, retention, tracking and creative, shows where the program leaks, and the Full Audit includes a target list of the partner types and names worth recruiting first. Express Audit $297, Full Audit $1,950.</p>
-    <a class="btn btn-primary" href="../index.html#fees">Request Audit</a>
+    <a class="btn btn-primary" href="../index.html#fees" data-track="end-audit-how-to-recruit-affiliates">Request Audit</a>
   </div>
 
   <h2>Related reading</h2>
@@ -217,5 +222,14 @@
     <div><a href="../index.html#findings">The findings</a><a href="../index.html#surveyor">Surveyor</a><a href="../index.html#fees">Fee schedule</a></div>
   </div>
 </footer>
+<script>
+  document.querySelectorAll("[data-track]").forEach(function (link) {
+    link.addEventListener("click", function () {
+      if (typeof gtag === "function") {
+        gtag("event", "cta_click", { cta: link.dataset.track, destination: link.getAttribute("href"), page: location.pathname });
+      }
+    });
+  });
+</script>
 </body>
 </html>
