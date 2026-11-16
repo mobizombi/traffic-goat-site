@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Audit Affiliate Links: A Link-by-Link Check for Affiliate Programs - Traffic Goat</title>
+  <meta name="description" content="How to audit affiliate links on your program: inventory every partner link, test redirects and click IDs, catch dead landing pages and expired offers, and fix what partners are still promoting." />
+  <meta property="og:title" content="How to Audit Affiliate Links: A Link-by-Link Check for Affiliate Programs" />
+  <meta property="og:description" content="A practical affiliate link audit for brands: build the link inventory, test every link end to end, find the dead and leaking ones, and keep them healthy every quarter." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://traffic-goat.com/blog/how-to-audit-affiliate-links.html" />
+  <meta property="og:image" content="https://traffic-goat.com/assets/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="How to Audit Affiliate Links: A Link-by-Link Check for Affiliate Programs" />
+  <meta name="twitter:description" content="A practical affiliate link audit for brands: build the link inventory, test every link end to end, find the dead and leaking ones, and keep them healthy every quarter." />
+  <meta name="twitter:image" content="https://traffic-goat.com/assets/og-image.png" />
+  <link rel="icon" href="../favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" href="../assets/favicon.png" />
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WJLZ3XMCFH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WJLZ3XMCFH');
+  </script>
+  <link rel="canonical" href="https://traffic-goat.com/blog/how-to-audit-affiliate-links.html" />
+  <link rel="stylesheet" href="../styles.css?v=20261115" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "How to Audit Affiliate Links: A Link-by-Link Check for Affiliate Programs",
+      "description": "A practical affiliate link audit for brands and program managers: how to build an inventory of every link partners use, test each one end to end, find dead landing pages, expired offers and links that drop tracking, and keep partner links healthy every quarter.",
+      "datePublished": "2026-11-16",
+      "dateModified": "2026-11-16",
+      "mainEntityOfPage": "https://traffic-goat.com/blog/how-to-audit-affiliate-links.html",
+      "image": "https://traffic-goat.com/assets/og-image.png",
+      "author": {"@type": "Person", "@id": "https://traffic-goat.com/#adam", "name": "Adam S."},
+      "publisher": {"@type": "Organization", "@id": "https://traffic-goat.com/#org", "name": "Traffic Goat", "logo": {"@type": "ImageObject", "url": "https://traffic-goat.com/assets/traffic-goat-logo.png"}}
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type":"Question","name":"What is an affiliate link audit?","acceptedAnswer":{"@type":"Answer","text":"An affiliate link audit is a check of every link partners use to send traffic to you. For each link you confirm that it resolves to a live, relevant page, that the partner's click ID survives every redirect to checkout, that the offer it promotes still exists, and that a test order is credited to the right partner. The output is a list of broken, leaking and outdated links with a fix and an owner for each."}},
+        {"@type":"Question","name":"How often should you audit affiliate links?","acceptedAnswer":{"@type":"Answer","text":"Run a full audit once a quarter and a targeted check after any change that can break links: a site migration, new URL structure, checkout or payment change, consent banner update, retired product or plan, or an expired promotion. The targeted check only needs the links that point at the pages that changed."}},
+        {"@type":"Question","name":"How do you find all the affiliate links partners are using?","acceptedAnswer":{"@type":"Answer","text":"Start with the links your affiliate platform generated and the deep links in your creative library, then add what partners actually send traffic through. Export landing pages by clicks from the platform for the last 90 days, and in your analytics filter sessions that carry your affiliate parameter by landing page. The pages in that report that are not in your official list are the links partners built themselves, and they break most often."}},
+        {"@type":"Question","name":"What should happen to old affiliate links when a page is removed?","acceptedAnswer":{"@type":"Answer","text":"Redirect the old URL to the closest live page and make sure the redirect keeps the query string, so the partner's click ID and tracking parameters survive. Then tell the partners who still send traffic to it, with the new link. Never let a partner link fall through to a generic 404 or to your homepage without tracking."}},
+        {"@type":"Question","name":"Is an affiliate link audit the same as an affiliate program audit?","acceptedAnswer":{"@type":"Answer","text":"No. A link audit is one part of the tracking element of a program audit. A full affiliate program audit also rates recruitment, partner activation, payouts, retention and creative, and ranks the fixes by revenue impact. A link audit is a good first step when partners report missing sales or you have recently changed your site."}}
+      ]
+    }
+  </script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <a class="logo" href="../index.html#top"><img class="logo-mark" src="../assets/traffic-goat-logo.png" alt="" width="44" height="44" /><span>Traffic Goat</span></a>
+    <nav>
+      <a href="../index.html#findings">The findings</a>
+      <a href="../index.html#scope">Scope</a>
+      <a href="../index.html#surveyor">Surveyor</a>
+      <a href="../index.html#insights">Insights</a>
+    </nav>
+    <div class="nav-actions">
+      <div class="social-links social-links--nav" aria-label="Traffic Goat social profiles">
+        <a href="https://www.linkedin.com/company/trafficgoat" target="_blank" rel="noopener noreferrer" aria-label="Traffic Goat on LinkedIn">in</a>
+        <a href="https://www.facebook.com/profile.php?id=61590358515349" target="_blank" rel="noopener noreferrer" aria-label="Traffic Goat on Facebook">f</a>
+      </div>
+      <a class="nav-cta" href="../index.html#fees" data-track="nav-audit">Request Audit</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<article class="container article">
+  <a class="back-link" href="../index.html#insights">&larr; Back to Insights</a>
+  <span class="eyebrow">Affiliate Systems</span>
+  <h1>How to Audit Affiliate Links: A Link-by-Link Check for Affiliate Programs</h1>
+  <p class="article-meta">Traffic Goat Insights - By Adam S.</p>
+
+  <p>Every affiliate program has links it has forgotten about. A deep link to a product page that was retired last spring. A seasonal offer page that now returns a 404. A partner's own short link that goes through a redirect your developers added during a migration, which quietly drops the click ID on the way. Each of them still gets clicks, and none of them pays anyone.</p>
+
+  <p>The partner sees clicks and no sales and decides your program converts badly. You see nothing at all, because a broken link does not raise an error on your side. That is why the link audit is the most practical place to start when partners say "your tracking is off" or when a site change has gone live recently.</p>
+
+  <p>This post is written for brands and program managers, not publishers. It covers what an affiliate link audit checks, how to build the inventory of links partners actually use, a test you can run on each one, the failures you will find most often and how to fix them, and how to keep the links healthy afterwards. Link health is part of the tracking element in our <a href="affiliate-program-audit-checklist.html">affiliate program audit checklist</a>.</p>
+
+  <h2>What is an affiliate link audit?</h2>
+  <p>An affiliate link audit is a check of every link partners use to send traffic to you. For each link you confirm four things: that it resolves to a live, relevant page; that the partner's click ID survives every redirect to checkout; that the offer it promotes still exists; and that a test order through it is credited to the right partner. The output is a list of broken, leaking and outdated links, each with a fix and an owner.</p>
+  <p>It is narrower than an <a href="affiliate-tracking-issues.html">investigation into affiliate tracking issues</a>, which looks at the whole attribution setup, and much narrower than a full program audit. It is also the part most likely to find money quickly, because a link that is broken today is losing sales today.</p>
+
+  <h2>Step 1: build the link inventory</h2>
+  <p>You cannot audit links you do not know about, and the official list is never the full list. Partners copy URLs from your site, build their own deep links, keep old creative for years and run short links of their own. Build the inventory from four sources:</p>
+  <ol>
+    <li><strong>The affiliate platform.</strong> Export every tracking link and landing page URL the platform has generated, plus the landing pages ranked by clicks for the last 90 days.</li>
+    <li><strong>Your creative library.</strong> Banners, text links, email swipes and deep links you have handed to partners, including old ones still downloadable from the partner dashboard. The library itself is covered in <a href="affiliate-marketing-materials.html">affiliate marketing materials</a>.</li>
+    <li><strong>Your analytics.</strong> Filter sessions that carry your affiliate parameter, group by landing page, and sort by sessions. Pages in this report that are not in your official list are links partners built themselves.</li>
+    <li><strong>Your top partners' pages.</strong> For the ten or twenty partners who drive most of your affiliate revenue, open their main pages about you and note every link to your site. This is where the oldest links live.</li>
+  </ol>
+  <p>Put everything in one sheet with a row per unique destination URL: the URL, which partners use it, clicks in the last 90 days, conversions in the last 90 days, and the page it is supposed to land on. Sort by clicks. You will audit from the top down, because a broken link with 2,000 clicks a month matters more than fifty broken links with none.</p>
+
+  <h2>Step 2: test every link end to end</h2>
+  <p>For each row, starting with the highest-traffic links, run the same five checks. Use a test partner account and a clean browser session for each test.</p>
+  <ol>
+    <li><strong>Does it resolve?</strong> The link should end on a page that returns a normal status and actually loads, on mobile and desktop. A 404, a soft 404 such as an empty category page, or a redirect to the homepage all count as broken.</li>
+    <li><strong>Is it still relevant?</strong> The landing page should still match what the partner is promoting. A link to a "40% off" offer that now shows full price is not broken technically, but it converts badly and makes the partner look careless to their readers.</li>
+    <li><strong>Does tracking survive?</strong> Follow every redirect hop and confirm the click ID and other tracking parameters are still in the URL, or set as a first-party cookie, when the visitor reaches the landing page and again at checkout. Note exactly which hop drops them.</li>
+    <li><strong>Does a test order credit correctly?</strong> For the top links, complete a real or test order and confirm the conversion lands in the platform against the right partner, with the right amount.</li>
+    <li><strong>Is it the best destination?</strong> A link that works but lands on the homepage when a specific product or pricing page exists is a missed conversion, not a broken link. Flag it as an upgrade.</li>
+  </ol>
+  <p>Record a status for each link: OK, broken, leaking tracking, outdated offer, or upgrade. Most audits we see end with a short list of broken and leaking links that carry a surprising share of total partner clicks.</p>
+
+  <aside class="article-midcta" aria-label="Affiliate Program Audit">
+    <p><strong>Rather have this checked for you?</strong> The Express Audit rates your program on recruitment, activation, payouts, retention, tracking and creative, and ranks the fixes by revenue. $297, delivered in 48 hours.</p>
+    <a href="../index.html#fees" data-track="mid-audit-how-to-audit-affiliate-links">See the audit and fees</a>
+  </aside>
+
+  <h2>The failures you will find most often</h2>
+
+  <h3>Redirects that drop the query string</h3>
+  <p>The most common leak. A migration adds a redirect from an old URL to a new one, or from "http" to "https", or from a country path to a localized page, and the rule does not pass the query string through. The visitor arrives on the right page with no click ID. Fix the redirect rule so it keeps the full query string, and re-test every link that goes through it.</p>
+
+  <h3>Pages that were removed or renamed</h3>
+  <p>Retired products, merged plans, old blog posts and expired campaign pages. Partners keep linking to them for years. Redirect each one to the closest live page with the query string intact, then tell the partners who still send traffic to it and give them the new link.</p>
+
+  <h3>Expired offers and coupon pages</h3>
+  <p>Seasonal sales, launch discounts and partner-exclusive codes that ended. The page may still load but no longer shows the deal, or the code fails at checkout. Either restore an evergreen version of the page or redirect it to the current offer, and send partners a short note with the replacement.</p>
+
+  <h3>Deep links that skip the tracking script</h3>
+  <p>A partner links to a help center page, a subdomain, or a landing page built in a separate tool that never loaded the affiliate script. The click is recorded by the platform but never connected to a visit on your side. Either load tracking on those pages or tell partners which page to use instead.</p>
+
+  <h3>Partner short links and link cloakers</h3>
+  <p>Many publishers wrap your link in their own redirect. That is normal, but some cloaking plugins strip parameters or cache an old destination. You cannot fix their setup, but you can spot it in the audit and send the partner a corrected link with a one-line explanation of what was breaking.</p>
+
+  <h3>Mobile and app paths</h3>
+  <p>On a phone, some links open your app instead of the website, and the click ID does not pass into the app. Test the top links on a phone with and without the app installed. If app installs lose attribution, that is a tracking design question, covered in <a href="affiliate-tracking-issues.html">affiliate tracking issues</a>.</p>
+
+  <h2>A worked example: what one audit can surface</h2>
+  <p>This is an illustration with made-up round numbers, to show the reasoning. It is not a real program.</p>
+  <p>A software brand inventories 180 unique destination URLs from its platform, creative library and analytics. The top 40 carry about 90 percent of affiliate clicks, so those are tested first.</p>
+  <ul>
+    <li>Six of the top 40 point at a pricing page that moved during a redesign. The redirect works, but it drops the query string, so none of those visits are credited. Together they carry about 12 percent of affiliate clicks.</li>
+    <li>Three point at a launch offer that ended months ago. They load, but show no discount.</li>
+    <li>Nine land on the homepage when a matching product page exists.</li>
+  </ul>
+  <p>One redirect rule fixes the biggest leak. Three emails to partners fix the expired offers. A list of nine better deep links becomes a reason to contact partners who had gone quiet, which is useful on its own; see <a href="why-affiliates-stop-promoting.html">why affiliates stop promoting your program</a>. To estimate what a leak of that size could be worth per month, try the <a href="../revenue-leak-calculator.html">free revenue leak calculator</a>.</p>
+
+  <h2>Step 3: fix, communicate and credit back</h2>
+  <ul>
+    <li><strong>Fix on your side first.</strong> Redirects, page restores and tracking scripts are changes you control. Do them before asking partners to change anything.</li>
+    <li><strong>Send partners a short, specific note.</strong> Name the link, what was wrong and the replacement. A partner is far more likely to update one link they can copy than to read a general announcement.</li>
+    <li><strong>Credit back where you can.</strong> If your own order data shows sales that came through a leaking link from a known partner, credit them. It costs little and rebuilds trust faster than anything else you can do.</li>
+    <li><strong>Update the creative library.</strong> Remove dead links and offers from the partner dashboard so they are not copied again.</li>
+  </ul>
+
+  <h2>Step 4: keep partner links healthy</h2>
+  <p>A one-time audit decays. Three habits keep it from having to be repeated from scratch:</p>
+  <ul>
+    <li><strong>Add the partner team to the release checklist.</strong> Any change to URLs, checkout, payments, consent or domains should trigger a check of the links that point at the affected pages.</li>
+    <li><strong>Never delete a page partners link to without a redirect.</strong> Make "check affiliate landing pages" a required step before a page is removed.</li>
+    <li><strong>Re-run the top-links test every quarter.</strong> The top 40 links usually take an hour or two to test once the inventory exists. Watch the landing-page report for new partner-built links and add them.</li>
+  </ul>
+  <p>The metrics to watch between audits, such as clicks to conversions by partner and missing-commission claims, are in <a href="affiliate-program-kpis.html">affiliate program KPIs: 12 metrics to track</a>.</p>
+
+  <h2>Frequently asked questions</h2>
+
+  <h3>What is an affiliate link audit?</h3>
+  <p>An affiliate link audit is a check of every link partners use to send traffic to you. For each link you confirm that it resolves to a live, relevant page, that the partner's click ID survives every redirect to checkout, that the offer it promotes still exists, and that a test order is credited to the right partner. The output is a list of broken, leaking and outdated links with a fix and an owner for each.</p>
+
+  <h3>How often should you audit affiliate links?</h3>
+  <p>Run a full audit once a quarter and a targeted check after any change that can break links: a site migration, new URL structure, checkout or payment change, consent banner update, retired product or plan, or an expired promotion. The targeted check only needs the links that point at the pages that changed.</p>
+
+  <h3>How do you find all the affiliate links partners are using?</h3>
+  <p>Start with the links your affiliate platform generated and the deep links in your creative library, then add what partners actually send traffic through. Export landing pages by clicks from the platform for the last 90 days, and in your analytics filter sessions that carry your affiliate parameter by landing page. The pages in that report that are not in your official list are the links partners built themselves, and they break most often.</p>
+
+  <h3>What should happen to old affiliate links when a page is removed?</h3>
+  <p>Redirect the old URL to the closest live page and make sure the redirect keeps the query string, so the partner's click ID and tracking parameters survive. Then tell the partners who still send traffic to it, with the new link. Never let a partner link fall through to a generic 404 or to your homepage without tracking.</p>
+
+  <h3>Is an affiliate link audit the same as an affiliate program audit?</h3>
+  <p>No. A link audit is one part of the tracking element of a program audit. A full affiliate program audit also rates recruitment, partner activation, payouts, retention and creative, and ranks the fixes by revenue impact. A link audit is a good first step when partners report missing sales or you have recently changed your site. What a full audit costs is broken down in <a href="affiliate-program-audit-cost.html">affiliate program audit cost</a>.</p>
+
+  <div class="article-cta">
+    <p><strong>Want every partner link checked for you?</strong> The <a href="../index.html#fees">Affiliate Program Audit</a> tests the links your partners actually use, traces where tracking drops, and rates tracking alongside recruitment, activation, payouts, retention and creative, with the fixes ranked by revenue impact. Express Audit $297, Full Audit $1,950.</p>
+    <a class="btn btn-primary" href="../index.html#fees" data-track="end-audit-how-to-audit-affiliate-links">Request Audit</a>
+  </div>
+
+  <h2>Related reading</h2>
+  <ul>
+    <li><a href="affiliate-tracking-issues.html">Affiliate tracking issues: why partner sales go missing and how to fix them</a></li>
+    <li><a href="affiliate-program-audit-checklist.html">Affiliate program audit checklist: the six elements to rate</a></li>
+    <li><a href="affiliate-marketing-materials.html">Affiliate marketing materials: what to give partners</a></li>
+    <li><a href="signs-your-affiliate-program-needs-an-audit.html">12 signs your affiliate program needs an audit</a></li>
+    <li><a href="affiliate-program-kpis.html">Affiliate program KPIs: 12 metrics to track and what they tell you</a></li>
+    <li><a href="../revenue-leak-calculator.html">Free revenue leak calculator</a></li>
+  </ul>
+</article>
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div><a class="logo" href="../index.html#top"><img class="logo-mark" src="../assets/traffic-goat-logo.png" alt="" width="44" height="44" /><span>Traffic Goat</span></a><p>AI Revenue Systems | Affiliate Growth | Monetization Infrastructure</p></div>
+    <div><a href="../index.html#findings">The findings</a><a href="../index.html#surveyor">Surveyor</a><a href="../index.html#fees">Fee schedule</a></div>
+  </div>
+</footer>
+<script>
+  document.querySelectorAll("[data-track]").forEach(function (link) {
+    link.addEventListener("click", function () {
+      if (typeof gtag === "function") {
+        gtag("event", "cta_click", { cta: link.dataset.track, destination: link.getAttribute("href"), page: location.pathname });
+      }
+    });
+  });
+</script>
+</body>
+</html>
