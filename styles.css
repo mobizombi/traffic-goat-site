@@ -1040,6 +1040,24 @@ input, select, textarea {
 .article-midcta p { margin: 0 0 var(--s-3); font-size: 16px; }
 .article-midcta a { display: inline-block; min-height: 44px; line-height: 44px; font-weight: 600; color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
 
+/* In-article reference tables (e.g. the onboarding checklist). Three columns
+   do not hold 375px, so below the breakpoint each row stacks into a block
+   with the column name printed before each cell, like the fee schedule. */
+.article-table { width: 100%; border-collapse: collapse; border: 1px solid var(--ink); background: var(--paper-form); margin: var(--s-4) 0 var(--s-5); }
+.article-table caption { caption-side: top; text-align: left; font-size: 14px; color: var(--ink-60); padding-bottom: var(--s-2); }
+.article-table th[scope="col"] { font-size: 11px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink-60); text-align: left; padding: var(--s-2) var(--s-3); border-bottom: 1px solid var(--ink); }
+.article-table th[scope="row"], .article-table td { font-size: 15px; line-height: 1.5; text-align: left; vertical-align: top; padding: var(--s-3); border-bottom: 1px solid var(--rule); }
+.article-table th[scope="row"] { font-weight: 600; white-space: nowrap; }
+.article-table tbody tr:last-child > * { border-bottom: 0; }
+@media (max-width: 719px) {
+  .article-table, .article-table thead, .article-table tbody, .article-table tr, .article-table th, .article-table td { display: block; width: auto; }
+  .article-table thead { position: absolute; left: -9999px; }
+  .article-table tbody tr { border-bottom: 1px solid var(--ink); padding: var(--s-3) var(--s-4); }
+  .article-table tbody tr:last-child { border-bottom: 0; }
+  .article-table th[scope="row"], .article-table td { border-bottom: 0; padding: var(--s-1) 0; white-space: normal; }
+  .article-table td::before { content: attr(data-label) ": "; font-weight: 600; color: var(--ink-60); }
+}
+
 .footer { border-top: 2px solid var(--ink); }
 .footer-grid { display: grid; gap: var(--s-5); padding: var(--s-6) 0 var(--s-7); }
 .footer-grid div:last-child { display: flex; flex-wrap: wrap; gap: var(--s-3) var(--s-5); }
